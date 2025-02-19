@@ -1,0 +1,33 @@
+references
+comands.txt
+*.gch
+
+# so long
+minilibx-linux.tgz
+*.tgz
+
+# System files
+.DS_Store
+
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.out
+*.exe
+test
+test.*
+
+# Temp files
+*.swp
+
+# Debug files
+*.dSYM/
+
+# VS Code directory
+.vscode/
+*.json
