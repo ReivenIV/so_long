@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 
-	//xs_check(ac, av);
+	//validator_xs(ac, av);
 	init_struct_game(&game);
 	return (0);
 }

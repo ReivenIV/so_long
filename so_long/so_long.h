@@ -74,7 +74,7 @@ typedef struct s_game
 //	------------------
 //	::  Validators  ::
 //	------------------
-int	xs_check(int ac, char **av);
+int	validator_xs(int ac, char **av);
 
 //	------------------
 //	::  Tools_init  ::

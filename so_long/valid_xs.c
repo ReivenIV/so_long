@@ -25,8 +25,8 @@ static int	is_dot_ber(char *map_file)
 	return (0);
 }
 
-// First check 
-int	xs_check(int ac, char **av)
+// First validator 
+int	validator_xs(int ac, char **av)
 {
 	int	fd;
 
