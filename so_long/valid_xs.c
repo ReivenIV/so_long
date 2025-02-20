@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   xs_check.c                                         :+:      :+:    :+:   */
+/*   valid_xs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bobytrap <bobytrap@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <so_long.h>
 
-// Will check if the second argument is ".ber" format 
+// Will check if the second argument is ".ber" (the correct map file format)
 static int	is_dot_ber(char *map_file)
 {
 	int	i;
@@ -26,6 +26,7 @@ static int	is_dot_ber(char *map_file)
 }
 
 // First validator 
+// Will validate amount of args, map file format & if its possible to open the map file.
 int	validator_xs(int ac, char **av)
 {
 	int	fd;
