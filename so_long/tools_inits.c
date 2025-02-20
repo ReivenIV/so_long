@@ -12,7 +12,7 @@
 
 #include <so_long.h>
 
-void	init_struct_grame(t_game *game)
+void	init_struct_game(t_game *game)
 {
 	game->mlx = 0;
 	game->win = 0;
