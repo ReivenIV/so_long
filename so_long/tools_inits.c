@@ -26,8 +26,8 @@ void	init_struct_game(t_game *game)
 	game->img_background = 0;
 	game->map = 0;
 	game->temp_map = 0;
-	game->img_width = 32
-	game->img_height = 32
+	game->img_width = 32;
+	game->img_height = 32;
 	game->map_rows = 0;
 	game->map_cols = 0;
 	game->player = 0;
