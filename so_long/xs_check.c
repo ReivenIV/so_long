@@ -28,11 +28,11 @@ static int	is_dot_ber(char *map_file)
 // First check 
 int	xs_check(int ac, char **av)
 {
-	int	fd
+	int	fd;
 
 	if (ac != 2)																// does it has 2 arguments ? 
 	{
-		write(1, "Error: only 2 params, ./so_long map.ber\n", 40);
+		write(1, "Error: only 2 params, ./so_long map.ber\n", 28);
 		exit (1);
 	}
 	if (is_dot_ber(av[1]) == 0)													// is 2 arg .ber format ?
@@ -43,7 +43,7 @@ int	xs_check(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)																	// can we open the file ? 
 	{
-		write(1, "Error: failed to open file\n", 35);
+		write(1, "Error: failed to open file\n", 27);
 		close(fd);
 		exit (1);	
 	}
