@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <so_long.h>
+
 int	main(int ac, char **av)
 {
 	// t_game game;
 
-	xs_check(ac, av):
+	xs_check(ac, av);
 	return (0);
 }
