@@ -20,3 +20,10 @@
 		- [ ] LIBFT 
 		- [ ] PRINTF ?
 
+
+
+## Inits
+	- [x] init_struct
+	- [ ] init_map
+	- [ ] init_map_temp
+	- [ ] init_imgs (will need mlx)
