@@ -16,7 +16,6 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 
-	game = NULL;
 	//xs_check(ac, av);
 	init_struct_game(&game);
 	return (0);
