@@ -33,7 +33,6 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;					// window
-
 	void	*img_player_w;			// front
 	void	*img_player_a;			// right
 	void	*img_player_s;			// left
@@ -42,16 +41,12 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_wall;
 	void	*img_background;
-
 	char 	**map;
 	char	**temp_map;
-
 	int		img_width;
 	int		img_height;
-
 	int		map_rows;
 	int		map_cols;
-
 	int		player;
 	int		pos_x;
 	int		pos_y;
@@ -62,8 +57,6 @@ typedef struct s_game
 	int		background;
 	int		moves;
 }	t_game;
-
-
 
 
 //	--------------
@@ -83,10 +76,10 @@ typedef struct s_game
 //	------------------
 int	xs_check(int ac, char **av);
 
-
-//	-------------
-//	::  Tools  ::
-//	-------------
+//	------------------
+//	::  Tools_init  ::
+//	------------------
+void	init_struct_game(t_game *game);
 
 //	------------
 //	::  Free  ::
