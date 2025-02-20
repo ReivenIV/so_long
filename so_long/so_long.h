@@ -27,6 +27,46 @@
 # define WIDTH 32
 
 //	--------------
+//	::  Struct  ::
+//	--------------
+typedef struct s_game
+{
+	void	*mlx;
+	void	*win;					// window
+
+	void	*img_player_w;			// front
+	void	*img_player_a;			// right
+	void	*img_player_s;			// left
+	void	*img_player_d;			// back
+	void	*img_exit;
+	void	*img_collect;
+	void	*img_wall;
+	void	*img_background;
+
+	char 	**map;
+	char	**temp_map;
+
+	int		img_width;
+	int		img_height;
+
+	int		map_rows;
+	int		map_cols;
+
+	int		player;
+	int		pos_x;
+	int		pos_y;
+	int		exit;
+	int		collect;
+	int		collected;
+	int		wall;
+	int		background;
+	int		moves;
+}	t_game;
+
+
+
+
+//	--------------
 //	::  Assets  ::
 //	--------------
 
