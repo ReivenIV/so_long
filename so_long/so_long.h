@@ -32,7 +32,7 @@
 typedef struct s_game
 {
 	void	*mlx;
-	void	*win;					// window
+	void	*win;					// win = window
 	void	*img_player_w;			// front
 	void	*img_player_a;			// right
 	void	*img_player_s;			// left
@@ -48,8 +48,8 @@ typedef struct s_game
 	int		map_rows;
 	int		map_cols;
 	int		player;
-	int		pos_x;
-	int		pos_y;
+	int		pos_x;					// i prefere cor_x (pos = position)
+	int		pos_y;					// i prefere cor_y
 	int		exit;
 	int		collect;
 	int		collected;
@@ -74,12 +74,22 @@ typedef struct s_game
 //	------------------
 //	::  Validators  ::
 //	------------------
-int	validator_xs(int ac, char **av);
+int		validator_xs(int ac, char **av);
 
 //	------------------
 //	::  Tools_init  ::
 //	------------------
 void	init_struct_game(t_game *game);
+
+//	-----------------
+//	::  Tools_map  ::
+//	-----------------
+int		count_cols(char *line);
+
+//	--------------------
+//	::  Tools_player  ::
+//	--------------------
+void	update_player_coordinates(t_game *game);
 
 //	------------
 //	::  Free  ::
