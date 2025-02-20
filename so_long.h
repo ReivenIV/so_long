@@ -13,24 +13,26 @@
 #ifndef	SO_LONG_H
 # define SO_LONG_H
 
-// libs
-
 # include <stdio.h>									//! printf just for testing 
 # include <unistd.h>								// Write
 # include <stdlib.h>								// Mallocs
 # include <X11/X.h>
 # include <X11/keysym.h>
 
-// Parameters
+//	------------------
+//	::  parameters  ::
+//	------------------
 # define SIZE 32
 # define HEIGHT 32
 # define WIDTH 32
 
-// Assets
+//	--------------
+//	::  Assets  ::
+//	--------------
 
-//	------------------------
-//	::  Arrow parameters  ::
-//	------------------------
+//	------------
+//	::  keys  ::
+//	------------
 # define UP 65362
 # define LEFT 65361
 # define DOWN 65364
@@ -39,6 +41,7 @@
 //	------------------
 //	::  Validators  ::
 //	------------------
+int	xs_check(int ac, char **av);
 
 
 //	-------------
