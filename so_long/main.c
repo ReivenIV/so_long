@@ -14,8 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	// t_game game;
+	t_game	game;
 
-	xs_check(ac, av);
+	game = NULL;
+	//xs_check(ac, av);
+	init_struct_game(&game);
 	return (0);
 }
