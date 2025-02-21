@@ -13,7 +13,7 @@
 #include "so_long.h"
 
 // Will check the length of each row if they have the same TRUE 
-int are_map_rows_same_length(char **map) //* map_is_rectangular
+int	are_map_rows_same_length(char **map) //* map_is_rectangular
 {
 	int i;
 
@@ -90,8 +90,11 @@ int	are_map_attributs_valide(char **map) // map_is_correct
 	return (1);
 }
 
+
 // Will check if maps rules are respected: has collectibles & only 1 player & only 1 exit
-int are_map_rules_respected(t_game *game)
+//! I don't like that is doing 2 things adding data to game struct and checking later. 
+// TODO create 2 functions.
+int	are_map_rules_respected(t_game *game)
 {
 	int	i;
 	int	j;
@@ -113,7 +116,7 @@ int are_map_rules_respected(t_game *game)
 		}
 		i++;
 	}
-	if (game->collect == 0 || game->player != 1 || game->exit != 1)
+	if (game->amount_c == 0 || game->player != 1 || game->exit != 1)
 		return (write(1, "ERROR : map rules not respected.\n", 33), 0);
 	return (1);
 }
