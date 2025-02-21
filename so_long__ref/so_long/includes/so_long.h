@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 20:17:11 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:13:13 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	free_map(char **map, t_game *game);
 void	exit_game(t_game *game);
 
 /* draw.c: */
-void	draw_img(t_game *game, void *img, int x, int y);
+////void	draw_img(t_game *game, void *img, int x, int y);
 void	draw_map(t_game *game);
 
 /* game_and_events.c: */
