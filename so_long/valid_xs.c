@@ -25,8 +25,8 @@ static int	is_dot_ber(char *map_file)
 	return (0);
 }
 
-// First validator 
-// Will validate amount of args, map file format & if its possible to open the map file.
+// First validator/parser 
+// Will validate amount of args, map file format & if its possible to open the map.ber file.
 int	validator_xs(int ac, char **av)
 {
 	int	fd;
