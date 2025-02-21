@@ -28,3 +28,26 @@ int	count_cols(char *line)
 	return (count);
 }
 
+void	update_map_data(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (game->map[i])
+	{
+		j = 0;
+		//printf("%s\n", game->map[i]);					// only for testing mode
+		while (game->map[i][j] != '\0')
+		{
+			if (game->map[i][j] == 'C')
+				game->collect++;
+			else if (game->map[i][j] == 'P')
+				game->player++;
+			else if (game->map[i][j] == 'E')
+				game->exit++;
+			j++;
+		}
+		i++;
+	}
+}
