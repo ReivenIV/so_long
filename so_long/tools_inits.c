@@ -40,3 +40,4 @@ void	init_struct_game(t_game *game)
 	game->background = 0;
 	game->moves = 0;
 }
+
