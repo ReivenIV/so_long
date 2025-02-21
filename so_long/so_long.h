@@ -87,6 +87,7 @@ void	init_struct_game(t_game *game);
 
 // Tools_map
 int		count_cols(char *line);
+void	update_map_data(t_game *game);
 
 // Tools_valid_map
 int are_map_rows_same_length(char **map);
