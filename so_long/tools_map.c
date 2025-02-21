@@ -15,6 +15,7 @@
 
 
 // is an strlen but in the context for these project i prefer to call it count_cols 
+// TODO we will use strlen for these one babe
 int	count_cols(char *line)
 {
 	int	count;
