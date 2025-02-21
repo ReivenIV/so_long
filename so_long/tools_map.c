@@ -23,7 +23,7 @@ int	count_cols(char *line)
 	int	count;
 
 	count = 0;
-	while (line[i] != '\0')
+	while (line[count] != '\0')
 		count++;
 	return (count);
 }
