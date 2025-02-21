@@ -55,5 +55,5 @@ int	main(int ac, char **av)
 	init_struct(&game);								// Init game struct
 	full_map_checker(av[1], &game);					// full check, init map
 	start_game(&game);								// Handle init screen img handle events
-	exit_gamsmpme(&game);							
+	exit_game(&game);							
 }
