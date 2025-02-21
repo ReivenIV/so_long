@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
-int	main(int ac, char **av)
-{
-	t_game	game;
+// // int	main(int ac, char **av)
+// // {
+// // 	t_game	game;
 
-	//validator_xs(ac, av);
-	init_struct_game(&game);
-	return (0);
-}
+// // 	//validator_xs(ac, av);
+// // 	init_struct_game(&game);
+// // 	return (0);
+// // }
