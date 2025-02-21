@@ -57,15 +57,15 @@ void	draw_map(t_game *game)
 		while (x < game->map_cols)
 		{
 			if (game->map[y][x] == 'P')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_player_d, x+size, y+size);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_player_d, x*size, y*size);
 			else if (game->map[y][x] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_exit, x+size, y+size);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_exit, x*size, y*size);
 			else if (game->map[y][x] == 'C')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_collect, x+size, y+size);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_collect, x*size, y*size);
 			else if (game->map[y][x] == '1')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_wall, x+size, y+size);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_wall, x*size, y*size);
 			else if (game->map[y][x] == '0')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_background, x+size, y+size);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_background, x*size, y*size);
 			x++;
 		}
 		y++;
