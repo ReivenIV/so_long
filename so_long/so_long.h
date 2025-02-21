@@ -16,6 +16,8 @@
 # include <stdio.h>									//! printf just for testing 
 # include <unistd.h>								// Write
 # include <stdlib.h>								// Mallocs
+# include <string.h>
+# include <fcntl.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
 
@@ -76,20 +78,29 @@ typedef struct s_game
 //	------------------
 int		validator_xs(int ac, char **av);
 
-//	------------------
-//	::  Tools_init  ::
-//	------------------
+//	-------------
+//	::  Tools  ::
+//	-------------
+
+// Tools_init
 void	init_struct_game(t_game *game);
 
-//	-----------------
-//	::  Tools_map  ::
-//	-----------------
+// Tools_map
 int		count_cols(char *line);
 
-//	--------------------
-//	::  Tools_player  ::
-//	--------------------
+// Tools_valid_map
+int are_map_rows_same_length(char **map);
+int	is_map_sorrounded_by_1(char **map);
+int	are_map_attributs_valide(char **map);
+int are_map_rules_respected(t_game *game);
+
+// Tools_player
 void	update_player_coordinates(t_game *game);
+
+// Tools_str
+int	ft_strlen(char *str);
+
+
 
 //	------------
 //	::  Free  ::
