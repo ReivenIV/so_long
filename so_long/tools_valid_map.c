@@ -24,7 +24,7 @@ int are_map_rows_same_length(char **map) //* map_is_rectangular
 	{
 		if (ft_strlen(map[0]) != ft_strlen(map[i]))
 		{
-			write(1, "ERROR : map has no sorrounded walls\n", 36);
+			write(1, "ERROR : map has rows with iregular lenth.\n", 42);
 			return (0);
 		}
 		i++;
@@ -49,40 +49,20 @@ int	is_map_sorrounded_by_1(char **map) //* map_wall_is_valid
 	while (j < len)			// check first & final row has only 1
 	{
 		if (map[0][j] != '1' || map[i - 1][j] != '1')
-			return (write(1, "ERROR : invalid sorrounded walls\n" , 33), 0);
+			return (write(1, "ERROR : invalid map sorrounded walls\n" , 37), 0);
 		j++;
 	}
 	i = 1;
 	while (map[i])								// check first & last columne has only 1
 	{
 		if (map[i][0] != '1' || map[i][len - 1] != '1')
-			return (write(1, "ERROR : invalid sorrounded walls\n" , 33), 0);
+			return (write(1, "ERROR : invalid map sorrounded walls\n" , 37), 0);
 		i++;
 	}
 	return (1);
 }
 
-// test is_map_sorrounded_by_1
-// // int main(void)
-// // {
-// //     // Example map
-// //     char *map[] = {
-// //         "111111",
-// //         "100001",
-// //         "101001",
-// //         "100001",
-// //         "111111",
-// //         NULL
-// //     };
 
-// //     // Test the function
-// //     if (is_map_sorrounded_by_1(map))
-// //         printf("The map is correctly surrounded by walls.\n");
-// //     else
-// //         printf("The map is not correctly surrounded by walls.\n");
-
-// //     return 0;
-// // }
 
 // Will check if the map has only valid attributs ('P', 'E', 'C', '0', '1')
 int	are_map_attributs_valide(char **map) // map_is_correct
@@ -100,13 +80,14 @@ int	are_map_attributs_valide(char **map) // map_is_correct
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C' && map[i][j] != '0' && map[i][j] != '1')
 			{
-				write(1, "ERROR : map has invalide attributs\n", 34);
+				write(1, "ERROR : map has invalide attributs.\n", 36);
 				return (0);
 			}
 			j++;
 		}
 		i++;
 	}
+	return (1);
 }
 
 // Will check if maps rules are respected: has collectibles & only 1 player & only 1 exit
@@ -119,7 +100,8 @@ int are_map_rules_respected(t_game *game)
 	while (game->map[i])
 	{
 		j = 0;
-		while (game->map[i][j] == '\0')
+		//printf("%s\n", game->map[i]);					// only for testing mode
+		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'C')
 				game->collect++;
@@ -132,9 +114,29 @@ int are_map_rules_respected(t_game *game)
 		i++;
 	}
 	if (game->collect == 0 || game->player != 1 || game->exit != 1)
-	{
-		write(1, "ERROR : map rules not respected\n", 32);
-		return (0);
-	}
+		return (write(1, "ERROR : map rules not respected.\n", 33), 0);
 	return (1);
 }
+
+// Test funcs
+// // int main(void)
+// // {
+// //     // Example map
+// //     char *map[] = {
+// //         "111111",
+// //         "10C0C1",
+// //         "1000E1",
+// //         "100P01",
+// //         "111111",
+// //         NULL
+// //     };
+// // 	t_game	game;
+// // 	init_struct_game(&game);
+// // 	game.map = map;
+// //     // Test the functions
+// // 	are_map_rows_same_length(map);
+// //     is_map_sorrounded_by_1(map);
+// // 	are_map_attributs_valide(map);
+// // 	are_map_rules_respected(&game);
+// //     return 0;
+// // }
