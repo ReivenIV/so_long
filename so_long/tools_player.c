@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
+
 // Will update the coordinates x:y of the player in the struct t_game.
 void	update_player_coordinates(t_game *game)
 {

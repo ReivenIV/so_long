@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
+
 // TODO count lines (will need GNL)
 // int	count_lines(char *av){}
 

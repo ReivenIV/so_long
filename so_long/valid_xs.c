@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
 // Will check if the second argument is ".ber" (the correct map file format)
 static int	is_dot_ber(char *map_file)

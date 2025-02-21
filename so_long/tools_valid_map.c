@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
 // Will check the length of each row if they have the same TRUE 
 int are_map_rows_same_length(char **map) //* map_is_rectangular
