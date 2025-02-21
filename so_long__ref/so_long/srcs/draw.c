@@ -45,11 +45,14 @@ void	draw_img(t_game *game, void *img, int x, int y)
 // 		y++;
 // 	}
 // }
+
+//* X*size and Y*size is to resize the image in case is bigger than 32. 
+// if the img is bigger than 32 then it will overlap with the others. 
 void	draw_map(t_game *game)
 {
 	int	x;
 	int	y;
-	int size = 32;
+
 	y = 0;
 	while (y < game->map_rows)
 	{
@@ -57,15 +60,15 @@ void	draw_map(t_game *game)
 		while (x < game->map_cols)
 		{
 			if (game->map[y][x] == 'P')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_player_d, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_player_d, x*SIZE, y*SIZE);
 			else if (game->map[y][x] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_exit, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_exit, x*SIZE, y*SIZE);
 			else if (game->map[y][x] == 'C')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_collect, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_collect, x*SIZE, y*SIZE);
 			else if (game->map[y][x] == '1')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_wall, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_wall, x*SIZE, y*SIZE);
 			else if (game->map[y][x] == '0')
-				mlx_put_image_to_window(game->mlx, game->win, game->img_background, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->img_background, x*SIZE, y*SIZE);
 			x++;
 		}
 		y++;
