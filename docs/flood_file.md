@@ -8,7 +8,7 @@ int	flood_fill(t_game *game, char **map, int x, int y)
 	static int	collects; 											// Keeps track of the number of collected items
 	static int	exits;    											// Keeps track of the number of exits reached
 
-	if (y < 0 || x < 0 || y > game->map_rows || x > game->map_cols) // Check if out of bounds
+	if (y < 0 || x < 0 || y > game->amount_rows || x > game->amount_cols) // Check if out of bounds
 		return (0);
 	if (map[y][x] == '1' || map[y][x] == 'X') 						// Stop if it's a wall ('1') or already visited ('X')
 		return (0);
@@ -147,7 +147,7 @@ void flood_fill_bfs(t_game *game, char **map, int startX, int startY)
         int x = queue[front][0];
         int y = queue[front++][1];
 
-        if (x < 0 || y < 0 || x >= game->map_cols || y >= game->map_rows || map[y][x] == '1' || map[y][x] == 'X')
+        if (x < 0 || y < 0 || x >= game->amount_cols || y >= game->amount_rows || map[y][x] == '1' || map[y][x] == 'X')
             continue;
 
         map[y][x] = 'X'; // Mark visited
