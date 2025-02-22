@@ -39,6 +39,7 @@ void	check_map_struct(t_game *game)
 	}
 }
 
+//! Only place where the temp_maps is used.
 void	check_map_path(char *av, t_game *game)
 {
     init_temp_map(av, game); 												// Initialize temp_map as a copy of the main map
