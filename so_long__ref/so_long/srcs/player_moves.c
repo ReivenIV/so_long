@@ -14,8 +14,8 @@
 
 void	player_new_position(t_game *game, int x, int y)
 {
-	game->pos_x = x;
-	game->pos_y = y;
+	game->coor_x = x;
+	game->coor_y = y;
 }
 
 int	check_next_position(t_game *game, int x, int y)
@@ -72,8 +72,8 @@ void	player_moves(char key, t_game *game)
 	int	x;
 	int	y;
 
-	x = game->pos_x;
-	y = game->pos_y;
+	x = game->coor_x;
+	y = game->coor_y;
 	if (key == 'W')
 		if (check_next_position(game, x, y - 1) == 1)
 			move(game, 'W', x, y);

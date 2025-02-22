@@ -56,8 +56,8 @@ void	player_position(t_game *game)
 		{
 			if (game->map[i][j] == 'P')
 			{
-				game->pos_x = j;
-				game->pos_y = i;
+				game->coor_x = j;
+				game->coor_y = i;
 				break ;
 			}
 			j++;

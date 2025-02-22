@@ -64,8 +64,8 @@ typedef struct s_game
 	int		map_rows;
 	int		map_cols;
 	int		player;
-	int		pos_x;				// position: x
-	int		pos_y;				// position: y
+	int		coor_x;				// position: x
+	int		coor_y;				// position: y
 	int		exit;				// amount of exits
 	int		collect;			// amount collectibles
 	int		collected;

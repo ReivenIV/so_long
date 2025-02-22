@@ -32,8 +32,8 @@ void	init_struct(t_game *game)
 	game->map_rows = 0;
 	game->map_cols = 0;
 	game->player = 0;
-	game->pos_x = 0;
-	game->pos_y = 0;
+	game->coor_x = 0;
+	game->coor_y = 0;
 	game->exit = 0;
 	game->collect = 0;
 	game->collected = 0;

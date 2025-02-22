@@ -43,7 +43,7 @@ void	check_map_path(char *av, t_game *game)
 {
     init_temp_map(av, game); 												// Initialize temp_map as a copy of the main map
     player_position(game); 													// Find the player's starting position
-    if (flood_fill(game, game->temp_map, game->pos_x, game->pos_y) == 0)
+    if (flood_fill(game, game->temp_map, game->coor_x, game->coor_y) == 0)
     {
         ft_printf("\033[0;31mError → Map doesn't have any valid path.\n");
         free_map(game->temp_map, game); 									// Free the temporary map

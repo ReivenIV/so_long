@@ -17,8 +17,8 @@ void	player_move_w(t_game *game, int new_x, int new_y)
 	int	x;
 	int	y;
 
-	x = game->pos_x * SIZE;
-	y = game->pos_y * SIZE;
+	x = game->coor_x * SIZE;
+	y = game->coor_y * SIZE;
 	new_x *= SIZE;
 	new_y *= SIZE;
 	mlx_put_image_to_window(game->mlx, game->win,
@@ -34,8 +34,8 @@ void	player_move_a(t_game *game, int new_x, int new_y)
 	int	x;
 	int	y;
 
-	x = game->pos_x * SIZE;
-	y = game->pos_y * SIZE;
+	x = game->coor_x * SIZE;
+	y = game->coor_y * SIZE;
 	new_x *= SIZE;
 	new_y *= SIZE;
 	mlx_put_image_to_window(game->mlx, game->win,
@@ -51,8 +51,8 @@ void	player_move_s(t_game *game, int new_x, int new_y)
 	int	x;
 	int	y;
 
-	x = game->pos_x * SIZE;
-	y = game->pos_y * SIZE;
+	x = game->coor_x * SIZE;
+	y = game->coor_y * SIZE;
 	new_x *= SIZE;
 	new_y *= SIZE;
 	mlx_put_image_to_window(game->mlx, game->win,
@@ -68,8 +68,8 @@ void	player_move_d(t_game *game, int new_x, int new_y)
 	int	x;
 	int	y;
 
-	x = game->pos_x * SIZE;
-	y = game->pos_y * SIZE;
+	x = game->coor_x * SIZE;
+	y = game->coor_y * SIZE;
 	new_x *= SIZE;
 	new_y *= SIZE;
 	mlx_put_image_to_window(game->mlx, game->win,
