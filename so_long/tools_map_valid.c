@@ -31,9 +31,9 @@ int	are_map_rows_same_length(char **map) //* map_is_rectangular
 	}
 	return (1);
 }
-// Will check if the map has sorrounded walls (1)
-// TODO is_map_sorrounded_by_1
-int	is_map_sorrounded_by_1(char **map) //* map_wall_is_valid 
+// Will check if the map has sorrounded walls (1) 
+// TODO is_map_surrounded_by_1
+int	is_map_surrounded_by_1(char **map) //* map_wall_is_valid 
 {
 	int	i;
 	int	j;
@@ -49,14 +49,14 @@ int	is_map_sorrounded_by_1(char **map) //* map_wall_is_valid
 	while (j < len)			// check first & final row has only 1
 	{
 		if (map[0][j] != '1' || map[i - 1][j] != '1')
-			return (write(1, "ERROR : invalid map sorrounded walls\n" , 37), 0);
+			return (write(1, "ERROR : invalid map surrounded walls\n" , 37), 0);
 		j++;
 	}
 	i = 1;
 	while (map[i])								// check first & last columne has only 1
 	{
 		if (map[i][0] != '1' || map[i][len - 1] != '1')
-			return (write(1, "ERROR : invalid map sorrounded walls\n" , 37), 0);
+			return (write(1, "ERROR : invalid map surrounded walls\n" , 37), 0);
 		i++;
 	}
 	return (1);
@@ -89,7 +89,6 @@ int	are_map_attributs_valide(char **map) // map_is_correct
 	}
 	return (1);
 }
-
 
 // Will check if maps rules are respected: has collectibles & only 1 player & only 1 exit
 //! I don't like that is doing 2 things adding data to game struct and checking later. 
