@@ -42,22 +42,22 @@ typedef struct s_game
 	void	*img_exit;
 	void	*img_collect;
 	void	*img_wall;
-	void	*img_background;
+	void	*img_bg;
 	char 	**map;
 	char	**temp_map;
 	int		img_width;
 	int		img_height;
-	int		map_rows;
-	int		map_cols;
+	int		amount_rows;
+	int		amount_cols;
 	int		player;
-	int		pos_x;					// i prefere cor_x (pos = position)
-	int		pos_y;					// i prefere cor_y
-	int		exit;
+	int		coor_x;					// i prefere cor_x (pos = position)
+	int		coor_y;					// i prefere cor_y
 	int		amount_c;
 	int		collected;
-	int		wall;
-	int		background;
 	int		moves;
+	// // int		exit;
+	// // int		wall;
+	// // int		background;
 }	t_game;
 
 
@@ -90,7 +90,7 @@ void	init_struct_game(t_game *game);
 void	update_map_data(t_game *game);
 
 // Tools_valid_map
-int are_map_rows_same_length(char **map);
+int are_amount_rows_same_length(char **map);
 int	is_map_sorrounded_by_1(char **map);
 int	are_map_attributs_valide(char **map);
 int are_map_rules_respected(t_game *game);

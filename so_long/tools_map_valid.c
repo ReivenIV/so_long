@@ -46,7 +46,7 @@ int	is_map_surrounded_by_1(char **map) //* map_wall_is_valid
 	len = ft_strlen(map[0]);
 	while (map[i])
 		i++;
-	while (j < len)			// check first & final row has only 1
+	while (j < len)								// check first & final row has only 1
 	{
 		if (map[0][j] != '1' || map[i - 1][j] != '1')
 			return (write(1, "ERROR : invalid map surrounded walls\n" , 37), 0);
@@ -76,7 +76,7 @@ int	are_map_attributs_valide(char **map) // map_is_correct
 	while (map[i])
 	{
 		j = 0;
-		while (map[i][j] != '\0')
+		while (map[i][j] != '\0')				// will check if the map has only valid atributs.
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C' && map[i][j] != '0' && map[i][j] != '1')
 			{
@@ -99,7 +99,7 @@ int	are_map_rules_respected(t_game *game)
 	int	j;
 
 	i = 0;
-	while (game->map[i])
+	while (game->map[i])		
 	{
 		j = 0;
 		//printf("%s\n", game->map[i]);					// only for testing mode
@@ -136,7 +136,7 @@ int	are_map_rules_respected(t_game *game)
 // // 	init_struct_game(&game);
 // // 	game.map = map;
 // //     // Test the functions
-// // 	are_map_rows_same_length(map);
+// // 	are_amount_rows_same_length(map);
 // //     is_map_sorrounded_by_1(map);
 // // 	are_map_attributs_valide(map);
 // // 	are_map_rules_respected(&game);

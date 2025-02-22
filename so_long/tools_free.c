@@ -17,7 +17,7 @@ void	free_map(char **map, t_game *game)
 	int i;
 
 	i = 0;
-	while (i < game->map_rows)
+	while (i < game->amount_rows)
 	{
 		free(map[i]);
 		i++;
