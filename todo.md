@@ -22,16 +22,18 @@
 		- [ ] PRINTF ?
 
 
-## is_valid_map
-	- [ ] Has sale amount of columns ? 
-	- [ ] is the map sourrounded by walls ? (1)
-	- [ ] the has only valid caracters ? ('P', 'E', 'C', '0', '1')
-	- [ ] are amount of items correct ?
+## [ ] is_valid_map
+	- [x] Has same amount of columns ? 
+	- [x] is the map sourrounded by walls ? (1)
+	- [x] the map has only valid caracters ? ('P', 'E', 'C', '0', '1')
+	- [x] are amount of items correct ?
 		- has collectibles 
 		- only 1 player
 		- only 1 exit
+	- [ ] flood fill
 ## Inits 
 	- [x] init_struct
 	- [ ] init_map
-	- [ ] init_map_temp
+	- [ ] init_map_temp 
+		- map_temp only is used to check the map with flood fill
 	- [ ] init_imgs (will need mlx)
