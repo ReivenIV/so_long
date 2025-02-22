@@ -18,15 +18,15 @@
 
 // is an strlen but in the context for these project i prefer to call it count_cols 
 // TODO we will use strlen for these one babe
-int	count_cols(char *line)
-{
-	int	count;
+// // int	count_cols(char *line)
+// // {
+// // 	int	count;
 
-	count = 0;
-	while (line[count] != '\0')
-		count++;
-	return (count);
-}
+// // 	count = 0;
+// // 	while (line[count] != '\0')
+// // 		count++;
+// // 	return (count);
+// // }
 
 void	update_map_data(t_game *game)
 {

@@ -86,7 +86,7 @@ int		validator_xs(int ac, char **av);
 void	init_struct_game(t_game *game);
 
 // Tools_map
-int		count_cols(char *line);
+// // int		count_cols(char *line);
 void	update_map_data(t_game *game);
 
 // Tools_valid_map
