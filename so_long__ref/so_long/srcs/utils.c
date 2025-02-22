@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:41:35 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:32:03 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void	player_position(t_game *game)
 	int	j;
 
 	i = 0;
-	while (i < game->map_rows)
+	while (i < game->amount_rows)
 	{
 		j = 0;
-		while (j < game->map_cols)
+		while (j < game->amount_cols)
 		{
 			if (game->map[i][j] == 'P')
 			{
@@ -72,7 +72,7 @@ int	flood_fill(t_game *game, char **map, int x, int y)
 	static int	collects;
 	static int	exits;
 
-	if (y < 0 || x < 0 || y > game->map_rows || x > game->map_cols || map[y][x] == '1' || map[y][x] == 'X')
+	if (y < 0 || x < 0 || y > game->amount_rows || x > game->amount_cols || map[y][x] == '1' || map[y][x] == 'X')
 		return (0);
 	if (map[y][x] == 'E')
 	{

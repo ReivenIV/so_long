@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 17:35:29 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:13:08 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:13:38 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_map(char **map, t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < game->map_rows)
+	while (i < game->amount_rows)
 	{
 		free(map[i]);
 		i++;

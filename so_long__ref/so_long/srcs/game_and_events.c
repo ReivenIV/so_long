@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:33:32 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:21:23 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	start_game(t_game *game)
 	// // int	rows;
 	// // int	cols;
 
-	// // rows = game->map_rows * SIZE;
-	// // cols = game->map_cols * SIZE;
+	// // rows = game->amount_rows * SIZE;
+	// // cols = game->amount_cols * SIZE;
 	game->mlx = mlx_init();
 	init_imgs(game);
-	game->win = mlx_new_window(game->mlx, game->map_cols * SIZE, 
-		game->map_rows * SIZE, "so long my dear");
+	game->win = mlx_new_window(game->mlx, game->amount_cols * SIZE, 
+		game->amount_rows * SIZE, "so long my dear");
 	draw_map(game);
 	gameplay(game);
 }

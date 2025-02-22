@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:34:31 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	init_struct(t_game *game)
 	game->temp_map = 0;
 	game->img_width = 32;
 	game->img_height = 32;
-	game->map_rows = 0;
-	game->map_cols = 0;
+	game->amount_rows = 0;
+	game->amount_cols = 0;
 	game->player = 0;
 	game->coor_x = 0;
 	game->coor_y = 0;
@@ -68,7 +68,7 @@ void	init_map(char *av, t_game *game)
 
 	i = 0;
 	line = 0;
-	game->map = (char **)malloc(sizeof(char *) * (game->map_rows + 1));
+	game->map = (char **)malloc(sizeof(char *) * (game->amount_rows + 1));
 	fd = open(av, O_RDONLY);
 	while (1)
 	{
@@ -94,7 +94,7 @@ void	init_temp_map(char *av, t_game *game)
 
 	i = 0;
 	line = 0;
-	game->temp_map = (char **)malloc(sizeof(char *) * (game->map_rows + 1));
+	game->temp_map = (char **)malloc(sizeof(char *) * (game->amount_rows + 1));
 	fd = open(av, O_RDONLY);
 	while (1)
 	{

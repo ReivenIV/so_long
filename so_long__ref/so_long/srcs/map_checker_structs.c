@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:55:16 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:34:10 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:13:38 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 //! Thes is not checking if the map is rectangular is checking if the rows have the same amunt of caracters
-int	map_is_rectangular(char **map) //* are_map_rows_same_length
+int	map_is_rectangular(char **map) //* are_amount_rows_same_length
 {
 	int	i;
 

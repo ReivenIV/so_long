@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:34:18 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:15:46 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,16 @@ typedef struct s_game
 	char	**temp_map;
 	int		img_width;
 	int		img_height;
-	int		map_rows;
-	int		map_cols;
+	int		amount_rows;
+	int		amount_cols;
+	int		amount_c;			// amount collectibles
 	int		player;
 	int		coor_x;				// position: x
 	int		coor_y;				// position: y
 	// // int		exit;				// amount of exits
-	int		amount_c;			// amount collectibles
-	int		collected;
 	// // int		wall;
 	// // int		background;
+	int		collected;
 	int		moves;
 }	t_game;
 

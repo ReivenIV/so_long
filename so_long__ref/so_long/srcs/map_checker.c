@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:28:05 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:32:37 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	check_map_path(char *av, t_game *game)
 
 void	full_map_checker(char *av, t_game *game)
 {
-	game->map_rows = count_lines(av);
+	game->amount_rows = count_lines(av);
 	init_map(av, game);
-	game->map_cols = ft_strlen(game->map[0]);
+	game->amount_cols = ft_strlen(game->map[0]);
 	check_map_struct(game);
 	check_map_path(av, game);
 }

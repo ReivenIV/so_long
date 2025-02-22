@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:00:04 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 15:13:08 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 // // // 	int	y;
 
 // // // 	y = 0;
-// // // 	while (y < game->map_rows)
+// // // 	while (y < game->amount_rows)
 // // // 	{
 // // // 		x = 0;
-// // // 		while (x < game->map_cols)
+// // // 		while (x < game->amount_cols)
 // // // 		{
 // // // 			if (game->map[y][x] == 'P')
 // // // 				draw_img(game, game->img_player_d, x, y);
@@ -54,10 +54,10 @@ void	draw_map(t_game *game)
 	int	y;
 
 	y = 0;
-	while (y < game->map_rows)
+	while (y < game->amount_rows)
 	{
 		x = 0;
-		while (x < game->map_cols)
+		while (x < game->amount_cols)
 		{
 			if (game->map[y][x] == 'P')
 				mlx_put_image_to_window(game->mlx, game->win, 
