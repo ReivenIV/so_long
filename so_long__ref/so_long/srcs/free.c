@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 17:35:29 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 12:18:29 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/22 15:13:08 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player_d);
 	mlx_destroy_image(game->mlx, game->img_exit);
 	mlx_destroy_image(game->mlx, game->img_collect);
-	mlx_destroy_image(game->mlx, game->img_background);
+	mlx_destroy_image(game->mlx, game->img_bg);
 	mlx_destroy_image(game->mlx, game->img_wall);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);

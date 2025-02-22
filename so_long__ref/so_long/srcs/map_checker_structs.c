@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:55:16 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:18:08 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 15:34:10 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,10 @@ int	map_is_functional(t_game *game)
 {
 	int	i;
 	int	j;
+	int	exit;
 
 	i = 0;
+	exit = 0;
 	while (game->map[i])
 	{
 		j = 0;
@@ -102,12 +104,12 @@ int	map_is_functional(t_game *game)
 			else if (game->map[i][j] == 'P')
 				game->player++;
 			else if (game->map[i][j] == 'E')
-				game->exit++;
+				exit++;
 			j++;
 		}
 		i++;
 	}
-	if (game->amount_c == 0 || game->player != 1 || game->exit != 1)
+	if (game->amount_c == 0 || game->player != 1 || exit != 1)
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:28:35 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 15:34:31 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	init_imgs(t_game *game)
 	game->img_exit = mlx_xpm_file_to_image(game->mlx, EXIT_IMG, w, h);
 	game->img_collect = mlx_xpm_file_to_image(game->mlx, COLLECT_IMG, w, h);
 	game->img_wall = mlx_xpm_file_to_image(game->mlx, WALL_IMG, w, h);
-	game->img_background = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, w, h);
+	game->img_bg = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, w, h);
 }
 
 // All created to NULL but only the image.
@@ -42,7 +42,7 @@ void	init_struct(t_game *game)
 	game->img_exit = 0;
 	game->img_collect = 0;
 	game->img_wall = 0;
-	game->img_background = 0;
+	game->img_bg = 0;
 	game->map = 0;
 	game->temp_map = 0;
 	game->img_width = 32;
@@ -52,11 +52,11 @@ void	init_struct(t_game *game)
 	game->player = 0;
 	game->coor_x = 0;
 	game->coor_y = 0;
-	game->exit = 0;
+	// // game->exit = 0;
 	game->amount_c = 0;
 	game->collected = 0;
-	game->wall = 0;
-	game->background = 0;
+	// // game->wall = 0;
+	// // game->background = 0;
 	game->moves = 0;
 }
 

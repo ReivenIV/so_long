@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   game_and_events.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:33:32 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 12:17:22 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/22 15:21:23 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+
+void	start_game(t_game *game)
+{
+	// // int	rows;
+	// // int	cols;
+
+	// // rows = game->map_rows * SIZE;
+	// // cols = game->map_cols * SIZE;
+	game->mlx = mlx_init();
+	init_imgs(game);
+	game->win = mlx_new_window(game->mlx, game->map_cols * SIZE, 
+		game->map_rows * SIZE, "so long my dear");
+	draw_map(game);
+	gameplay(game);
+}
 
 int	handle_exit(t_game *game)
 {
@@ -40,17 +56,4 @@ void	gameplay(t_game *game)
 	mlx_loop(game->mlx);
 }
 
-void	start_game(t_game *game)
-{
-	int	rows;
-	int	cols;
 
-	rows = game->map_rows * SIZE;
-	cols = game->map_cols * SIZE;
-	game->mlx = mlx_init();
-	init_imgs(game);
-	game->win = mlx_new_window(game->mlx, cols, rows,
-			"so_long - miranha em busca do miojinho");
-	draw_map(game);
-	gameplay(game);
-}

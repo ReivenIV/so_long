@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:31:51 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 15:34:18 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@
 typedef struct s_game
 {
 	void	*mlx;
-	void	*win;				// win = window
+	void	*win;				// win = "window" needed to display the window with mlx
 	void	*img_player_w;
 	void	*img_player_a;
 	void	*img_player_s;
@@ -56,7 +56,7 @@ typedef struct s_game
 	void	*img_exit;
 	void	*img_collect;
 	void	*img_wall;
-	void	*img_background;
+	void	*img_bg;
 	char	**map;
 	char	**temp_map;
 	int		img_width;
@@ -66,11 +66,11 @@ typedef struct s_game
 	int		player;
 	int		coor_x;				// position: x
 	int		coor_y;				// position: y
-	int		exit;				// amount of exits
+	// // int		exit;				// amount of exits
 	int		amount_c;			// amount collectibles
 	int		collected;
-	int		wall;
-	int		background;
+	// // int		wall;
+	// // int		background;
 	int		moves;
 }	t_game;
 

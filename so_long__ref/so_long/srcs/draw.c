@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:00:04 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:12:52 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/22 15:13:08 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 // // // 			else if (game->map[y][x] == '1')
 // // // 				draw_img(game, game->img_wall, x, y);
 // // // 			else if (game->map[y][x] == '0')
-// // // 				draw_img(game, game->img_background, x, y);
+// // // 				draw_img(game, game->img_bg, x, y);
 // // // 			x++;
 // // // 		}
 // // // 		y++;
@@ -73,7 +73,7 @@ void	draw_map(t_game *game)
 					game->win, game->img_wall, x*SIZE, y*SIZE);
 			else if (game->map[y][x] == '0')
 				mlx_put_image_to_window(game->mlx, 
-					game->win, game->img_background, x*SIZE, y*SIZE);
+					game->win, game->img_bg, x*SIZE, y*SIZE);
 			x++;
 		}
 		y++;
