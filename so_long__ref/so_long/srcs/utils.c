@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:41:35 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 20:15:56 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:32:03 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,16 @@ int	count_lines(char *av)
 	return (i);
 }
 
-int	count_cols(char	*line)
-{
-	int	i;
+// // int	count_cols(char	*line)
+// // {
+// // 	int	i;
 
-	i = 0;
-	while (line[i] != '\0')
-		i++;
-	return (i);
-}
+// // 	i = 0;
+// // 	while (line[i] != '\0')
+// // 		i++;
+// // 	return (i);
+// // }
+
 //* Will update x:y position of the player in the map. 
 void	player_position(t_game *game)
 {
@@ -86,7 +87,7 @@ int	flood_fill(t_game *game, char **map, int x, int y)
 	flood_fill(game, map, x - 1, y);
 	flood_fill(game, map, x, y + 1);
 	flood_fill(game, map, x, y - 1);
-	if (exits == 1 && collects == game->collect)
+	if (exits == 1 && collects == game->amount_c)
 		return (1);
 	else
 		return (0);

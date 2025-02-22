@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 20:48:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 20:15:39 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:22:30 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	check_next_position(t_game *game, int x, int y)
 		game->collected++;
 		return (1);
 	}
-	if (game->map[y][x] == 'E' && (game->collected != game->collect))
+	if (game->map[y][x] == 'E' && (game->collected != game->amount_c))
 		return (0);
-	if (game->map[y][x] == 'E' && (game->collected == game->collect))
+	if (game->map[y][x] == 'E' && (game->collected == game->amount_c))
 	{
 		ft_printf("\033[0;32mYOU HELPED THOR TO SAVE THE WORLD FROM THANOS!\n");
 		exit_game(game);

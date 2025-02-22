@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:28:05 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 19:39:09 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:32:37 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	full_map_checker(char *av, t_game *game)
 {
 	game->map_rows = count_lines(av);
 	init_map(av, game);
-	game->map_cols = count_cols(game->map[0]);
+	game->map_cols = ft_strlen(game->map[0]);
 	check_map_struct(game);
 	check_map_path(av, game);
 }

@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/28 12:16:47 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:28:35 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+
+void	init_imgs(t_game *game)
+{
+	int	*w;
+	int	*h;
+
+	w = &game->img_width;
+	h = &game->img_height;
+	game->img_player_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, w, h);
+	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, w, h);
+	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, w, h);
+	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, w, h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx, EXIT_IMG, w, h);
+	game->img_collect = mlx_xpm_file_to_image(game->mlx, COLLECT_IMG, w, h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, WALL_IMG, w, h);
+	game->img_background = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, w, h);
+}
 
 // All created to NULL but only the image.
 void	init_struct(t_game *game)
@@ -35,7 +53,7 @@ void	init_struct(t_game *game)
 	game->coor_x = 0;
 	game->coor_y = 0;
 	game->exit = 0;
-	game->collect = 0;
+	game->amount_c = 0;
 	game->collected = 0;
 	game->wall = 0;
 	game->background = 0;
@@ -94,27 +112,4 @@ void	init_temp_map(char *av, t_game *game)
 	close(fd);
 }
 
-void	init_imgs(t_game *game)
-{
-	int	*w;
-	int	*h;
 
-	w = &game->img_width;
-	h = &game->img_height;
-	game->img_player_w = mlx_xpm_file_to_image
-		(game->mlx, PLAYER_W, w, h);
-	game->img_player_a = mlx_xpm_file_to_image
-		(game->mlx, PLAYER_A, w, h);
-	game->img_player_s = mlx_xpm_file_to_image
-		(game->mlx, PLAYER_S, w, h);
-	game->img_player_d = mlx_xpm_file_to_image
-		(game->mlx, PLAYER_D, w, h);
-	game->img_exit = mlx_xpm_file_to_image
-		(game->mlx, EXIT_IMG, w, h);
-	game->img_collect = mlx_xpm_file_to_image
-		(game->mlx, COLLECT_IMG, w, h);
-	game->img_wall = mlx_xpm_file_to_image
-		(game->mlx, WALL_IMG, w, h);
-	game->img_background = mlx_xpm_file_to_image
-		(game->mlx, BACKGROUND_IMG, w, h);
-}

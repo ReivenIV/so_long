@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_checker_structs.c                               :+:      :+:    :+:  */
+/*   map_checker_structs.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 16:55:16 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/27 16:55:16 by lbordona         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:18:08 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	map_is_functional(t_game *game)
 		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'C')
-				game->collect++;
+				game->amount_c++;
 			else if (game->map[i][j] == 'P')
 				game->player++;
 			else if (game->map[i][j] == 'E')
@@ -107,7 +107,7 @@ int	map_is_functional(t_game *game)
 		}
 		i++;
 	}
-	if (game->collect == 0 || game->player != 1 || game->exit != 1)
+	if (game->amount_c == 0 || game->player != 1 || game->exit != 1)
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:13:13 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/21 17:31:51 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ typedef struct s_game
 	int		coor_x;				// position: x
 	int		coor_y;				// position: y
 	int		exit;				// amount of exits
-	int		collect;			// amount collectibles
+	int		amount_c;			// amount collectibles
 	int		collected;
 	int		wall;
 	int		background;
@@ -110,7 +110,7 @@ void	start_game(t_game *game);
 
 /* utils.c: */
 int		count_lines(char *av);
-int		count_cols(char *line);
+////int		count_cols(char *line);
 void	player_position(t_game *game);
 int		flood_fill(t_game *game, char **map, int x, int y);
 
