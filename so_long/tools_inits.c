@@ -34,7 +34,7 @@ void	init_struct_game(t_game *game)
 	game->pos_x = 0;
 	game->pos_y = 0;
 	game->exit = 0;
-	game->collect = 0;
+	game->amount_c = 0;
 	game->collected = 0;
 	game->wall = 0;
 	game->background = 0;

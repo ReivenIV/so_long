@@ -53,7 +53,7 @@ typedef struct s_game
 	int		pos_x;					// i prefere cor_x (pos = position)
 	int		pos_y;					// i prefere cor_y
 	int		exit;
-	int		collect;
+	int		amount_c;
 	int		collected;
 	int		wall;
 	int		background;

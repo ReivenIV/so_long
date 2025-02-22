@@ -41,7 +41,7 @@ void	update_map_data(t_game *game)
 		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'C')
-				game->collect++;
+				game->amount_c++;
 			else if (game->map[i][j] == 'P')
 				game->player++;
 			else if (game->map[i][j] == 'E')
