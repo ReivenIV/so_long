@@ -44,7 +44,7 @@ clean:
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@$(MAKE) fclean -C ./libft
+	 @$(MAKE) fclean -C ./libft
 #	@$(MAKE) fclean -C ./minilibx-linux
 	$(RM) $(NAME)
 
