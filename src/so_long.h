@@ -86,10 +86,12 @@ int		validator_xs(int ac, char **av);
 
 // Tools_init
 void	init_struct_game(t_game *game);
+int		init_map(char *av, t_game *game);
 
 // Tools_map
 // // int		count_cols(char *line);
-void	update_map_data(t_game *game);
+// // void	update_map_data(t_game *game);
+int	count_lines(char *av);
 
 // Tools_valid_map
 int are_amount_rows_same_length(char **map);
@@ -103,11 +105,16 @@ void	update_player_coordinates(t_game *game);
 // Tools_str
 // // int	ft_strlen(char *str);
 
-
-
 //	------------
 //	::  Free  ::
 //	------------
+void	free_map(char **map, t_game *game);
+
+
+//! Tools print just for testing mode
+void print_game_struct(t_game *game);				//!-- To erase. --//
+void print_map(char **map, int rows);				//!-- To erase. --//
+
 
 
 
