@@ -38,38 +38,55 @@ int	count_lines(char *av)
 // // 	printf("Number of lines: %d\n", lines);
 // // 	return (0);
 // // }
-// is an strlen but in the context for these project i prefer to call it count_cols 
-// TODO we will use strlen for these one babe
-// // int	count_cols(char *line)
+
+//TODO need testing !! 
+int	flood_fill(t_game *game, char **map, int x, int y)
+{
+	static int	collected_c;
+	static int	exits;
+
+	////print_game_struct(game);
+	if (y < 0 || x < 0 || y > game->amount_rows || x > game->amount_cols || map[y][x] == '1' || map[y][x] == 'X')		// Limits of the flood fill
+		return (0);
+	if (map[y][x] == 'E')
+	{
+		exits++;
+		map[y][x] = 'X';
+		return (0);
+	}
+	if (map[y][x] == 'C')
+		collected_c++;
+	map[y][x] = 'X';
+	flood_fill(game, map, x + 1, y);
+	flood_fill(game, map, x - 1, y);
+	flood_fill(game, map, x, y + 1);
+	flood_fill(game, map, x, y - 1);
+	if (exits == 1 && collected_c == game->amount_c)
+		return (1);
+	else
+		return (0);
+}
+
+// // int main()
 // // {
-// // 	int	count;
+// //     t_game game;
+// //     init_struct_game(&game);
+// //     game.amount_rows = 5;
+// //     game.amount_cols = 5;
+// //     game.amount_c = 1;
 
-// // 	count = 0;
-// // 	while (line[count] != '\0')
-// // 		count++;
-// // 	return (count);
-// // }
+// //     char *map[5] = {
+// //         "11111",
+// //         "1C0E1",
+// //         "10001",
+// //         "1P001",
+// //         "11111"
+// //     };
 
-// // void	update_map_data(t_game *game)
-// // {
-// // 	int	i;
-// // 	int	j;
+// //     printf("test\n");
 
-// // 	i = 0;
-// // 	while (game->map[i])
-// // 	{
-// // 		j = 0;
-// // 		//printf("%s\n", game->map[i]);					// only for testing mode
-// // 		while (game->map[i][j] != '\0')
-// // 		{
-// // 			if (game->map[i][j] == 'C')
-// // 				game->amount_c++;
-// // 			else if (game->map[i][j] == 'P')
-// // 				game->player++;
-// // 			else if (game->map[i][j] == 'E')
-// // 				game->exit++;
-// // 			j++;
-// // 		}
-// // 		i++;
-// // 	}
+// //     int result = flood_fill(&game, map, 1, 1);
+// //     printf("Flood fill result: %d\n", result);
+
+// //     return 0;
 // // }
