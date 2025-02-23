@@ -18,8 +18,16 @@ EXTRA = -lXext -lX11
 RM = rm -rf
 LIBFT = ./libft/libft.a
 MINILIBX = ./minilibx-linux/libmlx.a
-SRCS = src/main.c src/tools_free.c src/tools_map.c src/tools_player.c \
-src/valid_xs.c src/tools_inits.c src/tools_map_valid.c src/tools_str.c
+SRCS = src/main.c \
+		src/tools_free.c \
+		src/tools_map.c \
+		src/tools_player.c \
+		src/valid_xs.c \
+		src/tools_inits.c \
+		src/tools_map_valid.c \
+		src/tools_str.c \
+		src/tools_print.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
