@@ -22,7 +22,7 @@ void	update_player_coordinates(t_game *game)
 	while (y < game->amount_rows)
 	{
 		x = 0;
-		while (x > game->amount_cols)
+		while (x < game->amount_cols)
 		{
 			if (game->map[y][x] == 'P')
 			{
