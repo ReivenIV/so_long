@@ -13,6 +13,8 @@
 #ifndef	SO_LONG_H
 # define SO_LONG_H
 
+# include "../libft/libft.h"
+# include "../minilibx-linux/mlx.h"
 # include <stdio.h>									//! printf just for testing 
 # include <unistd.h>								// Write
 # include <stdlib.h>								// Mallocs
@@ -99,7 +101,7 @@ int are_map_rules_respected(t_game *game);
 void	update_player_coordinates(t_game *game);
 
 // Tools_str
-int	ft_strlen(char *str);
+// // int	ft_strlen(char *str);
 
 
 
