@@ -97,8 +97,10 @@ int	are_map_rules_respected(t_game *game)
 {
 	int	i;
 	int	j;
+	int	exit;
 
 	i = 0;
+	exit = 0;
 	while (game->map[i])		
 	{
 		j = 0;
@@ -106,16 +108,16 @@ int	are_map_rules_respected(t_game *game)
 		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'C')
-				game->collect++;
+				game->amount_c++;
 			else if (game->map[i][j] == 'P')
 				game->player++;
 			else if (game->map[i][j] == 'E')
-				game->exit++;
+				exit++;
 			j++;
 		}
 		i++;
 	}
-	if (game->amount_c == 0 || game->player != 1 || game->exit != 1)
+	if (game->amount_c == 0 || game->player != 1 || exit != 1)
 		return (write(1, "ERROR : map rules not respected.\n", 33), 0);
 	return (1);
 }
