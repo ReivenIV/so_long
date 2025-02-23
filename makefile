@@ -12,16 +12,16 @@
 
 NAME = so_long
 
-CC = gcc
+CC = cc -g
 CFLAGS = -Wall -Wextra -Werror
 EXTRA = -lXext -lX11
 RM = rm -rf
 LIBFT = ./libft/libft.a
 MINILIBX = ./minilibx-linux/libmlx.a
-SRC = main.c tools_free.c tools_map.c tools_player.c valid_xs.c \
-	tools_inits.c tools_map_valid.c tools_str.c\
+SRCS = src/main.c src/tools_free.c src/tools_map.c src/tools_player.c \
+src/valid_xs.c src/tools_inits.c src/tools_map_valid.c src/tools_str.c
 
-OBJS = $(SRCS:%.c=%.o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 	$(MAKE) clean
@@ -33,7 +33,10 @@ $(MINILIBX):
 	@$(MAKE) -C ./minilibx-linux
 
 $(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
-	@$(cc) $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(EXTRA) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(EXTRA) -o $(NAME)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(MAKE) clean -C ./libft
