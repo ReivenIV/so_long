@@ -39,7 +39,7 @@ int	count_lines(char *av)
 // // 	return (0);
 // // }
 
-//TODO need testing !! 
+
 int	flood_fill(t_game *game, char **map, int x, int y)
 {
 	static int	collected_c;
