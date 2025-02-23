@@ -1,5 +1,9 @@
 # TODO
 
+## GNL & LIBFT
+	- [x] bring LIBFT and GNL to the project. 
+	- [x] connect GNL to LIBFT, .h, makefile
+	- [x] test from so_long projet a function using GNL.
 
 ## Main structure:
 	- [x]	validator_xs
@@ -17,23 +21,30 @@
 	- [x] init global struct
 	- [ ] map check
 		- will need to bring:
-		- [ ] GNL 
-		- [ ] LIBFT 
+		- [x] GNL 
+		- [x] LIBFT 
 		- [ ] PRINTF ?
-
+			- will try to avoid using printf i prefer write
 
 ## [ ] is_valid_map
-	- [x] Has same amount of columns ? 
-	- [x] is the map sourrounded by walls ? (1)
-	- [x] the map has only valid caracters ? ('P', 'E', 'C', '0', '1')
-	- [x] are amount of items correct ?
+	- [x] Has same amount of columns ?  -> are_amount_rows_same_length
+	- [x] is the map sourrounded by walls ? (1)  -> is_map_sorrounded_by_1
+	- [x] the map has only valid caracters ? ('P', 'E', 'C', '0', '1')  -> are_map_attributs_valide
+	- [x] are amount of items correct ? -> are_map_rules_respected
 		- has collectibles 
 		- only 1 player
 		- only 1 exit
+	- [x] count_lines using GNL
 	- [ ] flood fill
+
+	- [ ] full map checker (we will need init map)
+		- [ ] create a handler calling all is/are functions.
+		- [ ] when all above test are passed use flood fill to check if the paths are possible to play. (avoid using a temp_map in the struct).
+
+
 ## Inits 
 	- [x] init_struct
 	- [ ] init_map
-	- [ ] init_map_temp 
+	- [ ] init_map_temp (i want to avoid using a temp_map in the struct)
 		- map_temp only is used to check the map with flood fill
 	- [ ] init_imgs (will need mlx)
