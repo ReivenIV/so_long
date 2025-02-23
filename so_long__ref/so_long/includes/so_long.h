@@ -81,10 +81,10 @@ void	check_map_path(char *av, t_game *game);
 void	full_map_checker(char *av, t_game *game);
 
 /* map_checker_structs.c: */
-int		map_is_rectangular(char **map);
-int		map_wall_is_valid(char **map);
-int		map_is_correct(char **map);
-int		map_is_functional(t_game *game);
+int		are_amount_rows_same_length(char **map);
+int		is_map_sorrounded_by_1(char **map);
+int		are_map_attributs_valide(char **map);
+int		are_map_rules_respected(t_game *game);
 
 
 /* initialize.c: */

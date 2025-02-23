@@ -14,23 +14,23 @@
 
 void	check_map_struct(t_game *game)
 {
-	if (map_is_rectangular(game->map) == 0)
+	if (are_amount_rows_same_length(game->map) == 0)
 	{
 		free_map(game->map, game);
 		exit(1);
 	}
-	if (map_wall_is_valid(game->map) == 0)
+	if (is_map_sorrounded_by_1(game->map) == 0)
 	{
 		ft_printf("\033[0;31mError → Map isn't surrounded by walls.\n");
 		free_map(game->map, game);
 		exit(1);
 	}
-	if (map_is_correct(game->map) == 0)
+	if (are_map_attributs_valide(game->map) == 0)
 	{
 		free_map(game->map, game);
 		exit(1);
 	}
-	if (map_is_functional(game) == 0)
+	if (are_map_rules_respected(game) == 0)
 	{
 		ft_printf("\033[0;31mError → Map has invalid number of Collectible");
 		ft_printf("\033[0;31m, Exit or Player.\n");

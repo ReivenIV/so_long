@@ -32,7 +32,6 @@ int	are_map_rows_same_length(char **map) //* map_is_rectangular
 	return (1);
 }
 // Will check if the map has sorrounded walls (1) 
-// TODO is_map_surrounded_by_1
 int	is_map_surrounded_by_1(char **map) //* map_wall_is_valid 
 {
 	int	i;

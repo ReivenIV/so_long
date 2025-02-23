@@ -14,7 +14,7 @@
 
 
 //! Thes is not checking if the map is rectangular is checking if the rows have the same amunt of caracters
-int	map_is_rectangular(char **map) //* are_amount_rows_same_length
+int	are_amount_rows_same_length(char **map) //* are_amount_rows_same_length
 {
 	int	i;
 
@@ -33,7 +33,7 @@ int	map_is_rectangular(char **map) //* are_amount_rows_same_length
 	return (1);
 }
 // These is checking if the map is sorrounded by 1
-int	map_wall_is_valid(char **map) //* is_map_sorrounded_by_1
+int	is_map_sorrounded_by_1(char **map) //* is_map_sorrounded_by_1
 {
 	int	i;
 	int	j;
@@ -61,7 +61,7 @@ int	map_wall_is_valid(char **map) //* is_map_sorrounded_by_1
 }
 
 // Will check if the map has only valid attributs ('P', 'E', 'C', '0', '1')
-int	map_is_correct(char **map) // are_map_attributs_valide
+int	are_map_attributs_valide(char **map) // are_map_attributs_valide
 {
 	int	i;
 	int	j;
@@ -86,7 +86,7 @@ int	map_is_correct(char **map) // are_map_attributs_valide
 }
 
 // Will check if maps rules are respected: has collectibles & only 1 player & only 1 exit
-int	map_is_functional(t_game *game)
+int	are_map_rules_respected(t_game *game)
 {
 	int	i;
 	int	j;
