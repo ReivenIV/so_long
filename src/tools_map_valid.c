@@ -13,7 +13,7 @@
 #include "so_long.h"
 
 // Will check the length of each row if they have the same TRUE 
-int	are_map_rows_same_length(char **map) //* map_is_rectangular
+static int	are_map_rows_same_length(char **map)
 {
 	int i;
 
@@ -32,7 +32,7 @@ int	are_map_rows_same_length(char **map) //* map_is_rectangular
 	return (1);
 }
 // Will check if the map has sorrounded walls (1) 
-int	is_map_surrounded_by_1(char **map) //* map_wall_is_valid 
+static int	is_map_surrounded_by_1(char **map)
 {
 	int	i;
 	int	j;
@@ -61,10 +61,8 @@ int	is_map_surrounded_by_1(char **map) //* map_wall_is_valid
 	return (1);
 }
 
-
-
 // Will check if the map has only valid attributs ('P', 'E', 'C', '0', '1')
-int	are_map_attributs_valide(char **map) // map_is_correct
+static int	are_map_attributs_valide(char **map)
 {
 	int i;
 	int j;
@@ -92,7 +90,7 @@ int	are_map_attributs_valide(char **map) // map_is_correct
 // Will check if maps rules are respected: has collectibles & only 1 player & only 1 exit
 //! I don't like that is doing 2 things adding data to game struct and checking later. 
 // TODO create 2 functions.
-int	are_map_rules_respected(t_game *game)
+static int	are_map_rules_respected(t_game *game)
 {
 	int	i;
 	int	j;
@@ -121,25 +119,39 @@ int	are_map_rules_respected(t_game *game)
 	return (1);
 }
 
+// A handler of above functions.
+int	is_map_format_corect(t_game *game)
+{
+	if (are_amount_rows_same_length(game->map) == 0)
+		return (free_map(game->map), exit(1), 0);
+	if (is_map_sorrounded_by_1(game->map) == 0)
+		return (free_map(game->map), exit(1), 0);
+	if (are_map_attributs_valide(game->map) == 0)
+		return (free_map(game->map), exit(1), 0);
+	if (are_map_rules_respected(game->map) == 0)
+		return (free_map(game->map), exit(1), 0);
+	return (1);
+}
+
 // Test funcs
-// // int main(void)
-// // {
-// //     // Example map
-// //     char *map[] = {
-// //         "111111",
-// //         "10C0C1",
-// //         "1000E1",
-// //         "100P01",
-// //         "111111",
-// //         NULL
-// //     };
-// // 	t_game	game;
-// // 	init_struct_game(&game);
-// // 	game.map = map;
-// //     // Test the functions
-// // 	are_amount_rows_same_length(map);
-// //     is_map_sorrounded_by_1(map);
-// // 	are_map_attributs_valide(map);
-// // 	are_map_rules_respected(&game);
-// //     return 0;
-// // }
+// int main(void)
+// {
+//     // Example map
+//     char *map[] = {
+//         "111111",
+//         "10C0C1",
+//         "1000E1",
+//         "100P01",
+//         "111111",
+//         NULL
+//     };
+// 	t_game	game;
+// 	init_struct_game(&game);
+// 	game.map = map;
+//     // Test the functions
+// 	are_amount_rows_same_length(map);
+//     is_map_sorrounded_by_1(map);
+// 	are_map_attributs_valide(map);
+// 	are_map_rules_respected(&game);
+//     return 0;
+// }
