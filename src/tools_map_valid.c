@@ -171,7 +171,7 @@ int main(int argc, char **argv)
         return 1;
     }
     game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
-	count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
+	//count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
     update_player_coordinates(&game);
 	print_game_struct(&game);
     // Test the functions
