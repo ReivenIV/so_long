@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobytrap <bobytrap@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:30:26 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/23 12:30:26 by bobytrap         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:18:10 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ void print_game_struct(t_game *game)
     printf("  \"temp_map\": %p,\n", game->temp_map);
     printf("  \"img_width\": %d,\n", game->img_width);
     printf("  \"img_height\": %d,\n", game->img_height);
-    printf("  \"amount_rows\": %d,\n", game->amount_rows);
-    printf("  \"amount_cols\": %d,\n", game->amount_cols);
-    printf("  \"player\": %d,\n", game->player);
     printf("  \"coor_x\": %d,\n", game->coor_x);
     printf("  \"coor_y\": %d,\n", game->coor_y);
-    printf("  \"amount_c\": %d,\n", game->amount_c);
     printf("  \"collected\": %d,\n", game->collected);
     printf("  \"moves\": %d\n", game->moves);
+    printf("  \"amount_player\": %d,\n", game->player);
+    printf("  \"amount_exit\": %d,\n", game->exit);
+    printf("  \"amount_rows\": %d,\n", game->amount_rows);
+    printf("  \"amount_cols\": %d,\n", game->amount_cols);
+    printf("  \"amount_c\": %d,\n", game->amount_c);
     printf("}\n");
 }
 
