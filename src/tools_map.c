@@ -39,4 +39,27 @@ int	count_lines(char *av)
 // // 	return (0);
 // // }
 
+// TODO will count Players, Exits, 
+void	count_pecs(t_game *game)
+{
+	int	i;
+	int	j;
 
+	i = 0;
+	while (game->map[i])		
+	{
+		j = 0;
+		//printf("%s\n", game->map[i]);					// only for testing mode
+		while (game->map[i][j] != '\0')
+		{
+			if (game->map[i][j] == 'P')
+				game->player++;
+			else if (game->map[i][j] == 'E')
+				game->exit++;
+			else if (game->map[i][j] == 'C')
+				game->amount_c++;
+			j++;
+		}
+		i++;
+	}
+}

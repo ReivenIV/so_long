@@ -36,6 +36,7 @@ void	init_struct_game(t_game *game)
 	game->amount_c = 0;
 	game->collected = 0;
 	game->moves = 0;
+	game->exit = 0;
 }
 
 int	init_map(char *av, t_game *game)

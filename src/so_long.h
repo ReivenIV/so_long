@@ -57,7 +57,7 @@ typedef struct s_game
 	int		amount_c;
 	int		collected;
 	int		moves;
-	// // int		exit;
+	int		exit;
 	// // int		wall;
 	// // int		background;
 }	t_game;
@@ -91,14 +91,15 @@ int		init_map(char *av, t_game *game);
 // Tools_map
 // // int		count_cols(char *line);
 // // void	update_map_data(t_game *game);
-int	count_lines(char *av);
+int		count_lines(char *av);
+void	count_pecs(t_game *game);
 
 // Tools_valid_map
 // // int are_amount_rows_same_length(char **map);
 // // int	is_map_sorrounded_by_1(char **map);
 // // int	are_map_attributs_valide(char **map);
 // // int are_map_rules_respected(t_game *game);
-int	is_map_format_corect(t_game *game);
+int		is_map_format_corect(t_game *game);
 
 
 // Tools_player
@@ -114,10 +115,7 @@ void	free_map(char **map, t_game *game);
 
 
 //! Tools print just for testing mode
-void print_game_struct(t_game *game);				//!-- To erase. --//
-void print_map(char **map, int rows);				//!-- To erase. --//
-
-
-
+void	print_game_struct(t_game *game);				//!-- To erase. --//
+void	print_map(char **map, int rows);				//!-- To erase. --//
 
 #endif
