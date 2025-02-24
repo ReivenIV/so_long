@@ -52,7 +52,7 @@ static int	is_map_surrounded_by_1(char **map)
         if (map[0][j] != '1' || map[i - 1][j] != '1')
         {
             printf("Error at row check: map[0][%d] = %c, map[%d - 1][%d] = %c\n", j, map[0][j], i, j, map[i - 1][j]);
-            return (write(1, "ERROR : invalid map surrounded walls\n" , 37), 0);
+            return (write(1, "1 ERROR : invalid map surrounded walls\n" , 37), 0);
         }
         j++;
     }
@@ -63,7 +63,7 @@ static int	is_map_surrounded_by_1(char **map)
         if (map[i][0] != '1' || map[i][len - 1] != '1')
         {
             printf("Error at column check: map[%d][0] = %c, map[%d][%d - 1] = %c\n", i, map[i][0], i, len, map[i][len - 1]);
-            return (write(1, "ERROR : invalid map surrounded walls\n" , 37), 0);
+            return (write(1, "2 ERROR : invalid map surrounded walls\n" , 37), 0);
         }
         i++;
     }
@@ -168,7 +168,7 @@ int main(int argc, char **argv)
         perror("Error initializing map");
         return 1;
     }
-    game.amount_cols = strlen(game.map[0]); // Set the amount_cols based on the first row length
+    game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
 	count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
     update_player_coordinates(&game);
 	print_game_struct(&game);
