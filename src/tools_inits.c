@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_inits.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobytrap <bobytrap@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/20 16:03:01 by bobytrap         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:54:22 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	init_struct_game(t_game *game)
 	game->exit = 0;
 }
 
-int	init_map(char *av, t_game *game)
+int	init_map(char *av, t_game *game, int amount_rows)
 {
 	char	*line;
 	int		i;
@@ -47,7 +47,7 @@ int	init_map(char *av, t_game *game)
 
 	i = 0;
 	line = 0;
-	game->map = malloc(sizeof(char *) * (game->amount_rows + 1));
+	game->map = malloc(sizeof(char *) * (amount_rows + 1));
 	if (!game->map)
 		return (0);
 	fd = open(av, O_RDONLY);
