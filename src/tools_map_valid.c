@@ -45,7 +45,10 @@ static int	is_map_surrounded_by_1(char **map)
     i = 0;
     j = 0;
     len = ft_strlen(map[0]);
-    printf("test: %s", map[0]);
+    printf("\n");
+    ft_putstr_fd(map[5-1], 1);
+    printf("\n");
+
     while (map[i])
         i++;
     printf("i = %i\n", i);
