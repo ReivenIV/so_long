@@ -35,16 +35,16 @@
 		- only 1 player
 		- only 1 exit
 	- [x] count_lines using GNL
-	- [ ] flood fill
-
-	- [ ] full map checker (we will need init map)
+	- [x] flood fill
+<!-- TODO validator_map -->
+	- [ ] validator_map (we will need init map)
 		- [ ] create a handler calling all is/are functions.
 		- [ ] when all above test are passed use flood fill to check if the paths are possible to play. (avoid using a temp_map in the struct).
 
 
 ## Inits 
 	- [x] init_struct
-	- [ ] init_map
+	- [x] init_map
 	- [ ] init_map_temp (i want to avoid using a temp_map in the struct)
 		- map_temp only is used to check the map with flood fill
 	- [ ] init_imgs (will need mlx)
