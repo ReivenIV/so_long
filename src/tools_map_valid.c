@@ -38,6 +38,7 @@ static int	is_map_surrounded_by_1(char **map)
     int	j;
     int	len;
 
+
     print_map(map, 5);
     if (!map)
         return (0);
@@ -133,6 +134,7 @@ static int	are_map_attributs_valide(char **map)
 int	is_map_format_correct(t_game *game)
 {
 	count_pecs(game);											// Will count amount of : Player, Exit, Collectibles
+    print_game_struct(game);
 	if (are_map_rows_same_length(game->map) == 0)
 		return (free_map(game->map, game), exit(1), 0);
 	if (is_map_surrounded_by_1(game->map) == 0)
