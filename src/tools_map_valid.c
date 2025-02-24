@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:57:11 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/24 15:35:00 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/24 16:59:46 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ int	is_map_format_correct(t_game *game)
 // // 		perror("Error counting lines in file");
 // // 		return 1;
 // // 	}
-// // 	if (!init_map(argv[1], &game))
+// // 	if (!init_map(argv[1], &game, game.amount_rows))
 // // 	{
 // // 		perror("Error initializing map");
 // // 		return 1;
@@ -162,7 +162,7 @@ int	is_map_format_correct(t_game *game)
 // // 	game.amount_cols = ft_strlen(game.map[0]);                      // Set the amount_cols based on the first row length
 // // 	count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
 // // 	update_player_coordinates(&game);
-// // //	print_game_struct(&game);
+// // 	//	print_game_struct(&game);
 // // 	// Test the functions
 // // 	is_map_format_correct(&game);
 // // 	printf("map is correct");
