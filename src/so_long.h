@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobytrap <bobytrap@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/20 13:00:10 by bobytrap         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:14:13 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int		validator_xs(int ac, char **av);
 
 // Tools_init
 void	init_struct_game(t_game *game);
-int		init_map(char *av, t_game *game);
+int		init_map(char *av, t_game *game, int amount_rows);
 
 // Tools_map
 // // int		count_cols(char *line);
@@ -99,8 +99,8 @@ void	count_pecs(t_game *game);
 // // int	is_map_sorrounded_by_1(char **map);
 // // int	are_map_attributs_valide(char **map);
 // // int are_map_rules_respected(t_game *game);
-int		is_map_format_corect(t_game *game);
-
+int		is_map_format_correct(t_game *game);
+int		are_map_paths_valid(char **av, t_game *game);
 
 // Tools_player
 void	update_player_coordinates(t_game *game);
