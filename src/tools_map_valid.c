@@ -176,5 +176,7 @@ int main(int argc, char **argv)
 	print_game_struct(&game);
     // Test the functions
 	is_map_format_correct(&game);
+    printf("map is correct");
     return 0;
+
 }
