@@ -12,7 +12,7 @@
 
 #include "../includes/so_long.h"
 
-void	check_map_struct(t_game *game)
+void	is_map_format_coorect(t_game *game)
 {
 	if (are_amount_rows_same_length(game->map) == 0)
 	{
@@ -58,6 +58,6 @@ void	full_map_checker(char *av, t_game *game)
 	game->amount_rows = count_lines(av);
 	init_map(av, game);
 	game->amount_cols = ft_strlen(game->map[0]);
-	check_map_struct(game);
+	is_map_format_coorect(game);
 	check_map_path(av, game);
 }
