@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_valid_map.c                                  :+:      :+:    :+:   */
+/*   tools_map_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobytrap <bobytrap@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:57:11 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/21 11:57:11 by bobytrap         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:35:00 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,47 +32,33 @@ static int	are_map_rows_same_length(char **map)
 	return (1);
 }
 // Will check if the map has sorrounded walls (1) 
-static int	is_map_surrounded_by_1(char **map)
+static int	is_map_surrounded_by_1(t_game *game)
 {
-    int	i;
-    int	j;
-    int	len;
+	int	i;
+	int	j;
+	int	a_rows;
+	int	a_cols;
 
-
-    print_map(map, 5);
-    if (!map)
-        return (0);
-    i = 0;
-    j = 0;
-    len = ft_strlen(map[0]);
-    printf("\n");
-    ft_putstr_fd(map[5-1], 1);
-    printf("\n");
-
-    while (map[i])
-        i++;
-    printf("i = %i\n", i);
-    while (j < len)								// check first & final row has only 1
-    {
-        if (map[0][j] != '1' || map[i - 1][j] != '1')
-        {
-            printf("Error at row check: map[0][%d] = %c, map[%d - 1][%d] = %c\n", j, map[0][j], i, j, map[i - 1][j]);
-            return (write(1, "1 ERROR : invalid map surrounded walls\n" , 37), 0);
-        }
-        j++;
-    }
-    i = 1;
-    printf("hello");
-    while (i < len - 1)								// check first & last columne has only 1
-    {
-        if (map[i][0] != '1' || map[i][len - 1] != '1')
-        {
-            printf("Error at column check: map[%d][0] = %c, map[%d][%d - 1] = %c\n", i, map[i][0], i, len, map[i][len - 1]);
-            return (write(1, "2 ERROR : invalid map surrounded walls\n" , 37), 0);
-        }
-        i++;
-    }
-    return (1);
+	i = 0;
+	j = 0;
+	a_rows = game->amount_rows;
+	a_cols = game->amount_cols;
+	while (game->map[i])
+		i++;
+	while (j < a_cols)								// check first & final row has only 1
+	{
+		if (game->map[0][j] != '1' || game->map[a_rows - 1][j] != '1')
+			return (write(1, "1 ERROR : invalid map surrounded walls\n" , 37), 0);
+		j++;
+	}
+	i = 1;
+	while (i < a_rows - 1)								// check first & last columne has only 1
+	{
+		if (game->map[i][0] != '1' || game->map[i][a_cols - 1] != '1')
+			return (write(1, "2 ERROR : invalid map surrounded walls\n" , 37), 0);
+		i++;
+	}
+	return (1);
 }
 
 // Will check if the map has only valid attributs ('P', 'E', 'C', '0', '1')
@@ -137,11 +123,10 @@ static int	are_map_attributs_valide(char **map)
 // A handler of above functions.
 int	is_map_format_correct(t_game *game)
 {
-	count_pecs(game);											// Will count amount of : Player, Exit, Collectibles
-    print_game_struct(game);
+	print_game_struct(game);
 	if (are_map_rows_same_length(game->map) == 0)
 		return (free_map(game->map, game), exit(1), 0);
-	if (is_map_surrounded_by_1(game->map) == 0)
+	if (is_map_surrounded_by_1(game) == 0)
 		return (free_map(game->map, game), exit(1), 0);
 	if (are_map_attributs_valide(game->map) == 0)
 		return (free_map(game->map, game), exit(1), 0);
@@ -153,34 +138,33 @@ int	is_map_format_correct(t_game *game)
 	return (1);
 }
 
-// Test funcs
-int main(int argc, char **argv)
-{
-    t_game game;
-    if (argc != 2)
-    {
-        printf("Usage: %s <map_file>\n", argv[0]);
-        return 1;
-    }
-    init_struct_game(&game);
-    game.amount_rows = count_lines(argv[1]);
-    if (game.amount_rows == -1)
-    {
-        perror("Error counting lines in file");
-        return 1;
-    }
-    if (!init_map(argv[1], &game))
-    {
-        perror("Error initializing map");
-        return 1;
-    }
-    game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
-	//count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
-    update_player_coordinates(&game);
-	print_game_struct(&game);
-    // Test the functions
-	is_map_format_correct(&game);
-    printf("map is correct");
-    return 0;
-
-}
+// Test main is_map_format_correct
+// // int main(int argc, char **argv)
+// // {
+// // 	t_game game;
+// // 	if (argc != 2)
+// // 	{
+// // 		printf("Usage: %s <map_file>\n", argv[0]);
+// // 		return 1;
+// // 	}
+// // 	init_struct_game(&game);
+// // 	game.amount_rows = count_lines(argv[1]);
+// // 	if (game.amount_rows == -1)
+// // 	{
+// // 		perror("Error counting lines in file");
+// // 		return 1;
+// // 	}
+// // 	if (!init_map(argv[1], &game))
+// // 	{
+// // 		perror("Error initializing map");
+// // 		return 1;
+// // 	}
+// // 	game.amount_cols = ft_strlen(game.map[0]);                      // Set the amount_cols based on the first row length
+// // 	count_pecs(&game);											// Will count amount of : Player, Exit, Collectibles
+// // 	update_player_coordinates(&game);
+// // //	print_game_struct(&game);
+// // 	// Test the functions
+// // 	is_map_format_correct(&game);
+// // 	printf("map is correct");
+// // 	return (0);
+// // }
