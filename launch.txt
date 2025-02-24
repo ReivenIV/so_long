@@ -1,0 +1,3 @@
+./so_long ./maps/valid_maps/map5.ber
+
+valgrind --leak-check=full ./so_long ./maps/valid_maps/map5.ber
