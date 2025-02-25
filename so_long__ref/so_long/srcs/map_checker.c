@@ -40,7 +40,7 @@ void	is_map_format_coorect(t_game *game)
 }
 
 //! Only place where the temp_maps is used.
-void	check_map_path(char *av, t_game *game)
+void	are_map_paths_valid(char *av, t_game *game)
 {
     init_temp_map(av, game); 												// Initialize temp_map as a copy of the main map
     player_position(game); 													// Find the player's starting position
@@ -59,5 +59,5 @@ void	full_map_checker(char *av, t_game *game)
 	init_map(av, game);
 	game->amount_cols = ft_strlen(game->map[0]);
 	is_map_format_coorect(game);
-	check_map_path(av, game);
+	are_map_paths_valid(av, game);
 }
