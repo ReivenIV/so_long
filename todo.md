@@ -38,7 +38,17 @@
 	- [x] flood fill
 <!-- TODO validator_map -->
 	- [ ] validator_map (we will need init map)
-		- [ ] create a handler calling all is/are functions.
+		- [x] create a handler calling all is/are functions.
+			- [ ] need testing with valgrind <!-- TODO-->
+		- [ ] create a function that checks all the paths (are_map_paths_valid)
+			- [ ] test with valgrind
+				- Working with valid maps: 
+					- [x] Is working with small maps
+					- [x] Is working with maps that have many rows
+					- [x] Leaks apear when we have many long rows. Need fix
+				- Working with invalid maps:
+					- [x] If path are not valid
+
 		- [ ] when all above test are passed use flood fill to check if the paths are possible to play. (avoid using a temp_map in the struct).
 
 

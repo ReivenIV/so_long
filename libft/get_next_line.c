@@ -1,119 +1,101 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 11:57:01 by rita              #+#    #+#             */
-/*   Updated: 2024/12/17 13:00:54 by rita             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 
-static int	check_src(char *src, char target)
+char	*start_next_stash(char *stash)
 {
-	int	i;
+    char	*next_line;
+    int		i;
+    int		j;
 
-	i = 0;
-	if (!src)
-		return (0);
-	while (src[i] != '\0')
-	{
-		if (src[i] == target)
-			return (1);
-		i++;
-	}
-	return (0);
+    i = 0;
+    j = 0;
+    while (stash[i] != '\n' && stash[i])
+        i++;
+    if (!stash[i])
+        return (free(stash), NULL);
+    next_line = (char *)malloc(sizeof(char) * ((ft_strlen(stash) - i + 1)));
+    if (!next_line)
+        return (NULL);
+    i++;
+    while (stash[i])
+    {
+        next_line[j] = stash[i];
+        j++;
+        i++;
+    }
+    next_line[j] = '\0';
+    free(stash);
+    return (next_line);
 }
 
-
-static char	*get_raw_line(int fd, char *stash)
+static char	*print_line(char *stash)
 {
-	char	*buffer_block;
-	int		res_open;
+	char	*str;
+	int		i;
 
-	if (stash && check_src(stash, '\n'))
-		return (stash);
-	buffer_block = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer_block)
+	i = 0;
+	if (!stash[i])
 		return (NULL);
-	res_open = 1;
-	while (!check_src(stash, '\n') && res_open != 0)
+	while (stash[i] != '\n' && stash[i] != '\0')
+		i++;
+	str = ft_calloc((i + 2), sizeof(char));
+	i = 0;
+	while (stash[i] != '\n' && stash[i] != '\0')
 	{
-		res_open = read(fd, buffer_block, BUFFER_SIZE);
-		if (res_open == -1)
-			return (free(buffer_block), NULL);
-		if (res_open == 0 && (!stash || stash[0] == '\0'))
-			return (free(buffer_block), NULL);
-		buffer_block[res_open] = '\0';
-		stash = ft_strjoin(stash, buffer_block);
-		if (!stash)
-			return (stash = NULL, NULL);
+		str[i] = stash[i];
+		i++;
 	}
-	free(buffer_block);
+	if (stash[i] == '\n')
+		str[i] = '\n';
+	return (str);
+}
+
+static char	*ft_free(char *stash, char *temp)
+{
+	char	*final;
+
+	final = ft_strjoin(stash, temp);
+	free (stash);
+	return (final);
+}
+
+static char	*find_line(char *stash, int fd)
+{
+	char	*temp;
+	int		count_char;
+
+	if (!stash)
+		stash = ft_calloc(1, sizeof(char));
+	temp = ft_calloc ((BUFFER_SIZE + 1), sizeof(char));
+	count_char = 1;
+	while (!ft_strchr(stash, '\n') && count_char != 0)
+	{
+		count_char = read(fd, temp, BUFFER_SIZE);
+		if (count_char == -1)
+		{
+			free (temp);
+			free (stash);
+			return (NULL);
+		}
+		temp [count_char] = '\0';
+		stash = ft_free(stash, temp);
+	}
+	free (temp);
 	return (stash);
-}
-
-static char	*create_new_line(char *raw_line)
-{
-	size_t	i;
-	char	*new_line;
-
-	i = 0;
-	while (raw_line[i] != '\n' && raw_line[i] != '\0')
-		i++;
-	if (raw_line[i] == '\n')
-		i++;
-	new_line = ft_substr(raw_line, 0, i);
-	if (!new_line)
-		return (NULL);
-	return (new_line);
-}
-
-static char	*update_stash(char *raw_line)
-{
-	size_t	i;
-	size_t	raw_line_len;
-	char	*new_stash;
-
-	if (!raw_line)
-		return (NULL);
-	raw_line_len = ft_strlen(raw_line);
-	i = 0;
-	while (raw_line[i] != '\n' && raw_line[i] != '\0')
-		i++;
-	if (raw_line[i] != '\n')
-		i++;
-	new_stash = ft_substr(raw_line, i + 1, (raw_line_len - i - 1));
-	if (new_stash && new_stash[0] == '\0')
-	{
-		free(new_stash);
-		new_stash = NULL;
-	}
-	return (new_stash);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*stash = NULL;
-	char		*raw_line;
-	char		*next_line;
+	static char	*stash;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	stash = find_line(stash, fd);
+	if (!stash)
 		return (NULL);
-	raw_line = get_raw_line(fd, stash);
-	if (!raw_line)
-	{
-		free(stash);
-		stash = NULL;
-		return (NULL);
-	}
-	next_line = create_new_line(raw_line);
-	stash = update_stash(raw_line);
-	free(raw_line);
-	raw_line = NULL;
-	return (next_line);
+	line = print_line(stash);
+	stash = start_next_stash(stash);
+	return (line);
 }
+
