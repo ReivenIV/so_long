@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/25 12:58:13 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/25 15:53:05 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,38 +66,6 @@ int	init_map(char *av, t_game *game, int amount_rows)
 	return (1);
 }
 
-// // int init_map(char *av, t_game *game, int amount_rows)
-// // {
-// //     char *line;
-// //     int i = 0, fd;
-
-// //     game->map = malloc(sizeof(char *) * (amount_rows + 1));
-// //     if (!game->map)
-// //         return (write(2, "Error: malloc failed\n", 21), 0);
-
-// //     fd = open(av, O_RDONLY);
-// //     if (fd == -1)
-// //     {
-// //         free(game->map);
-// //         return (write(2, "Error: cannot open file\n", 24), 0);
-// //     }
-
-// //     while ((line = get_next_line(fd)) != NULL)
-// //     {
-// //         game->map[i] = ft_strtrim(line, "\n");
-// //         free(line);
-// //         if (!game->map[i])
-// //         {
-// //             free_map(game->map, game);
-// //             close(fd);
-// //             return (write(2, "Error: malloc failed in ft_strtrim\n", 35), 0);
-// //         }
-// //         i++;
-// //     }
-// //     game->map[i] = NULL;
-// //     close(fd);
-// //     return (1);
-// // }
 // Test init_map
 // // int main(int ac, char **av)
 // // {
