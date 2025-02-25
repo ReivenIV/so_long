@@ -6,7 +6,7 @@
 #    By: rita <rita@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 11:49:14 by bobytrap          #+#    #+#              #
-#    Updated: 2025/02/24 18:12:03 by rita             ###   ########.fr        #
+#    Updated: 2025/02/25 14:39:16 by rita             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS = src/main.c \
 		src/tools_map_valid_2.c \
 		src/tools_str.c \
 		src/tools_print.c \
+		src/handler_map_validator.c\
 
 
 OBJS = $(SRCS:.c=.o)
