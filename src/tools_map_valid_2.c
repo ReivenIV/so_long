@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:57:11 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/24 18:54:25 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/25 12:41:18 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,47 +56,48 @@ int	are_map_paths_valid(char **av, t_game *game)
 	if (flood_fill(game, temp_map.map, game->coor_x, game->coor_y) == 0)
 	{
 		write(1, "ERROR : map path incorrect\n", 27);
-		free_map(temp_map.map, &temp_map);
+		free_map(temp_map.map, game);
 		free_map(game->map, game);
 		exit(1);
 	}
+	//!print_map(temp_map.map, game->amount_rows);
 	free_map(temp_map.map, game);										// REMINDER : (temp_map.map, game) is because temp_map doesn't have full data on the map but game yes. We are freeing temp_map here and not game. 
 	return (1);
 }
 // Main to test are_map_paths_valid
-int main(int argc, char **av)
-{
-	t_game game;
+// // int main(int argc, char **av)
+// // {
+// // 	t_game game;
 
-	if (argc != 2)
-	{
-		printf("Usage: %s <map_file>\n", av[0]);
-		return 1;
-	}
-	init_struct_game(&game);
-	game.amount_rows = count_lines(av[1]);
-	if (game.amount_rows == -1)
-	{
-		perror("Error counting lines in file");
-		return 1;
-	}
-	if (!init_map(av[1], &game, game.amount_rows))
-	{
-		perror("Error initializing map");
-		return 1;
-	}
-	game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
-	count_pecs(&game); // Will count amount of : Player, Exit, Collectibles
-	update_player_coordinates(&game);
-	printf("x: %i\ny: %i\n", game.coor_x, game.coor_y);
-	print_map(game.map, game.amount_rows);
-	printf("Starting flood fill at: (%d, %d)\n", game.coor_x, game.coor_y);
-	int res = are_map_paths_valid(av, &game);
-	printf("Flood fill result: %d\n", res);
-	print_map(game.map, game.amount_rows);
-	free_map(game.map, &game);
-	return 0;
-}
+// // 	if (argc != 2)
+// // 	{
+// // 		printf("Usage: %s <map_file>\n", av[0]);
+// // 		return 1;
+// // 	}
+// // 	init_struct_game(&game);
+// // 	game.amount_rows = count_lines(av[1]);
+// // 	if (game.amount_rows == -1)
+// // 	{
+// // 		perror("Error counting lines in file");
+// // 		return 1;
+// // 	}
+// // 	if (!init_map(av[1], &game, game.amount_rows))
+// // 	{
+// // 		perror("Error initializing map");
+// // 		return 1;
+// // 	}
+// // 	game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
+// // 	count_pecs(&game); // Will count amount of : Player, Exit, Collectibles
+// // 	update_player_coordinates(&game);
+// // 	printf("x: %i\ny: %i\n", game.coor_x, game.coor_y);
+// // 	//print_map(game.map, game.amount_rows);
+// // 	printf("Starting flood fill at: (%d, %d)\n", game.coor_x, game.coor_y);
+// // 	int res = are_map_paths_valid(av, &game);
+// // 	printf("Flood fill result: %d\n", res);
+// // 	//print_map(game.map, game.amount_rows);
+// // 	free_map(game.map, &game);
+// // 	return 0;
+// // }
 
 // Main to test flood_fill
 // // int main(int argc, char **argv)
