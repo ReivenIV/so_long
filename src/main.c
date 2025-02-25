@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 11:48:42 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/25 16:03:04 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/25 18:00:15 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 		return (exit(1), 0);  
 	validator_xs(ac, av);
 	init_struct_game(&game);
-	handler_map_validator(av, &game);
+	handler_map_validator(av, &game);			// Step: parser finit
 	free_map(game.map, &game);
 	return (0);
 }
