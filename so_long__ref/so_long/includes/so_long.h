@@ -77,7 +77,7 @@ typedef struct s_game
 /* map_checker.c: */
 void	is_map_format_coorect(t_game *game);
 void	check_map_empty_lines(t_game *game);
-void	check_map_path(char *av, t_game *game);
+void	are_map_paths_valid(char *av, t_game *game);
 void	full_map_checker(char *av, t_game *game);
 
 /* map_checker_structs.c: */
