@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/25 18:28:39 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 
 void	init_imgs(t_game *game)
 {
-	int	*w;
-	int	*h;
+	int	w;
+	int	h;
 
-	w = &game->img_width;
-	h = &game->img_height;
-	game->img_player_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, w, h);
-	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, w, h);
-	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, w, h);
-	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, w, h);
-	game->img_exit = mlx_xpm_file_to_image(game->mlx, EXIT_IMG, w, h);
-	game->img_collect = mlx_xpm_file_to_image(game->mlx, COLLECT_IMG, w, h);
-	game->img_wall = mlx_xpm_file_to_image(game->mlx, WALL_IMG, w, h);
-	game->img_bg = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, w, h);
+	// // w = &game->img_width;
+	// // h = &game->img_height;
+	w = WIDTH;
+	h = HEIGHT;
+	game->img_player_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, &w, &h);
+	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, &w, &h);
+	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, &w, &h);
+	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx, EXIT_IMG, &w, &h);
+	game->img_collect = mlx_xpm_file_to_image(game->mlx, COLLECT_IMG, &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, WALL_IMG, &w, &h);
+	game->img_bg = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, &w, &h);
 }
 
 // All created to NULL but only the image.
@@ -45,8 +47,8 @@ void	init_struct(t_game *game)
 	game->img_bg = 0;
 	game->map = 0;
 	game->temp_map = 0;
-	game->img_width = 32;
-	game->img_height = 32;
+	// // game->img_width = 32;
+	// // game->img_height = 32;
 	game->amount_rows = 0;
 	game->amount_cols = 0;
 	game->player = 0;

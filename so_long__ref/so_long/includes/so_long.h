@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 16:15:46 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/25 18:30:13 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ typedef struct s_game
 	void	*img_bg;
 	char	**map;
 	char	**temp_map;
-	int		img_width;
-	int		img_height;
+	// // int		img_width;
+	// // int		img_height;
 	int		amount_rows;
 	int		amount_cols;
 	int		amount_c;			// amount collectibles
