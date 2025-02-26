@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 15:58:07 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:44:33 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct s_game
 //	----------------
 void	handler_map_validator(char **av, t_game *game);
 void	handler_map_draw(t_game *game);
+void	handler_exit_game(t_game *game);
 
 
 //	-------------
@@ -110,7 +111,8 @@ int		is_map_format_correct(t_game *game);
 int		are_map_paths_valid(char **av, t_game *game);
 
 // Tools_player
-void	update_player_coordinates(t_game *game);
+void	get_player_coordinates(t_game *game);
+void	update_player_coordinates(t_game *game, int x, int y);
 
 //	------------
 //	::  Free  ::
