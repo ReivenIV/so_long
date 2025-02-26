@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:33:32 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 15:53:43 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:30:32 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	start_game(t_game *game)
 	gameplay(game);
 }
 
-int	handle_exit(t_game *game)
-{
-	exit_game(game);
-	exit(0);
-}
+// // int	handle_exit(t_game *game)
+// // {
+// // 	exit_game(game);
+// // 	exit(0);
+// // }
 
 int	handle_keypress(int key, t_game *game)
 {
@@ -52,7 +52,7 @@ int	handle_keypress(int key, t_game *game)
 void	gameplay(t_game *game)
 {
 	mlx_hook(game->win, KeyPress, KeyPressMask, &handle_keypress, game);
-	mlx_hook(game->win, DestroyNotify, ButtonPressMask, &handle_exit, game);
+	mlx_hook(game->win, DestroyNotify, ButtonPressMask, &exit_game, game);
 	mlx_loop(game->mlx);
 }
 
