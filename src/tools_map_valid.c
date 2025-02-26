@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_map_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:57:11 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/25 14:43:54 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 17:41:55 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,7 +166,7 @@ int	is_map_format_correct(t_game *game)
 // 	}
 // 	game.amount_cols = ft_strlen(game.map[0]);                      // Set the amount_cols based on the first row length
 // 	count_pecs(&game);												// Will count amount of : Player, Exit, Collectibles
-// 	update_player_coordinates(&game);
+// 	get_player_coordinates(&game);
 // 	//	print_game_struct(&game);
 // 	// Test the functions
 // 	is_map_format_correct(&game);

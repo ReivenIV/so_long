@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_map_valid_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 11:57:11 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/25 17:47:46 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 17:41:55 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	are_map_paths_valid(char **av, t_game *game)
 	init_struct_game(&temp_map_2);
 	if (init_map(av[1], &temp_map, game->amount_rows) == 0 || init_map(av[1], &temp_map_2, game->amount_rows) == 0)						
 		return (free_map(temp_map.map, game), free_map(temp_map_2.map, game), 0);
-	update_player_coordinates(game);
+	get_player_coordinates(game);
 	if (flood_fill_c(game, temp_map.map, game->coor_x, game->coor_y) == 0 || flood_fill_e_c(game, temp_map_2.map, game->coor_x, game->coor_y) == 0)
 	{
 		write(1, "ERROR : map path incorrect\n", 27);
@@ -113,7 +113,7 @@ int	are_map_paths_valid(char **av, t_game *game)
 // // 	}
 // // 	game.amount_cols = ft_strlen(game.map[0]); // Set the amount_cols based on the first row length
 // // 	count_pecs(&game); // Will count amount of : Player, Exit, Collectibles
-// // 	update_player_coordinates(&game);
+// // 	get_player_coordinates(&game);
 // // 	//printf("x: %i\ny: %i\n", game.coor_x, game.coor_y);
 // // 	//print_map(game.map, game.amount_rows);
 // // 	printf("Starting flood fill at: (%d, %d)\n", game.coor_x, game.coor_y);
@@ -147,7 +147,7 @@ int	are_map_paths_valid(char **av, t_game *game)
 // //     }
 // //     game.amount_cols = strlen(game.map[0]); // Set the amount_cols based on the first row length
 // //     game.amount_c = 2;
-// //     update_player_coordinates(&game);
+// //     get_player_coordinates(&game);
 // // 	printf("x: %i\ny: %i\n", game.coor_x, game.coor_y);
 // //     print_map(game.map, game.amount_rows);
 // //     printf("Starting flood fill at: (%d, %d)\n", game.coor_x, game.coor_y);
