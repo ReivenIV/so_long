@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 15:26:39 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:58:07 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ typedef struct s_game
 	void	*img_bg;
 	char 	**map;
 	char	**temp_map;
-	int		img_width;
-	int		img_height;
+	// // int		img_width;
+	// // int		img_height;
 	int		amount_rows;
 	int		amount_cols;
 	int		player;

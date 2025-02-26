@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 15:28:08 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:58:13 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	init_struct_game(t_game *game)
 	game->img_bg = 0;
 	game->map = 0;
 	game->temp_map = 0;
-	game->img_width = 32;
-	game->img_height = 32;
+	// // game->img_width = 32;
+	// // game->img_height = 32;
 	game->amount_rows = 0;
 	game->amount_cols = 0;
 	game->player = 0;

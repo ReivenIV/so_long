@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:30:26 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/24 17:18:10 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:57:51 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void print_game_struct(t_game *game)
     printf("  \"img_bg\": %p,\n", game->img_bg);
     printf("  \"map\": %p,\n", game->map);
     printf("  \"temp_map\": %p,\n", game->temp_map);
-    printf("  \"img_width\": %d,\n", game->img_width);
-    printf("  \"img_height\": %d,\n", game->img_height);
+    // // printf("  \"img_width\": %d,\n", game->img_width);
+    // // printf("  \"img_height\": %d,\n", game->img_height);
     printf("  \"coor_x\": %d,\n", game->coor_x);
     printf("  \"coor_y\": %d,\n", game->coor_y);
     printf("  \"collected\": %d,\n", game->collected);
