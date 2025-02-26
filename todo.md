@@ -19,7 +19,7 @@
 	- [x] init_map
 	- [ ] (done) init_map_temp
 		- reminder : I found a way to not do it without using an extra atribut in the struct
-	- [ ] init_imgs (will need mlx)
+	- [ ] init_images (will need mlx)
 
 
 ## GNL & LIBFT (done) ✅
