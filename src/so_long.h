@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 17:44:33 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:53:01 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;					// win = window
-	void	*img_player_w;			// front
-	void	*img_player_a;			// right
-	void	*img_player_s;			// left
-	void	*img_player_d;			// back
+	void	*img_p_w;			// front
+	void	*img_p_a;			// right
+	void	*img_p_s;			// left
+	void	*img_p_d;			// back
 	void	*img_exit;
 	void	*img_collect;
 	void	*img_wall;

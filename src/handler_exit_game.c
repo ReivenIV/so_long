@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:00:32 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/26 16:03:46 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:53:01 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	handler_exit_game(t_game *game)
 {
 	free_map(game->map, game);
-	mlx_destroy_image(game->mlx, game->img_player_w);
-	mlx_destroy_image(game->mlx, game->img_player_a);
-	mlx_destroy_image(game->mlx, game->img_player_s);
-	mlx_destroy_image(game->mlx, game->img_player_d);
+	mlx_destroy_image(game->mlx, game->img_p_w);
+	mlx_destroy_image(game->mlx, game->img_p_a);
+	mlx_destroy_image(game->mlx, game->img_p_s);
+	mlx_destroy_image(game->mlx, game->img_p_d);
 	mlx_destroy_image(game->mlx, game->img_exit);
 	mlx_destroy_image(game->mlx, game->img_collect);
 	mlx_destroy_image(game->mlx, game->img_bg);

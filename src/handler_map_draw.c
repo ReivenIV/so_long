@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:34:14 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/26 14:41:47 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:53:01 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	handler_map_draw(t_game *game)
 		{
 
 			if (game->map[y][x] == 'P')
-				draw_img(game, game->img_player_d, x, y);
+				draw_img(game, game->img_p_d, x, y);
 			else if (game->map[y][x] == 'E')
 				draw_img(game, game->img_exit, x, y);
 			else if (game->map[y][x] == 'C')
