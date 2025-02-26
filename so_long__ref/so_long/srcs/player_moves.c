@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   player_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/27 20:48:19 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 17:42:25 by bobydear         ###   ########.fr       */
+/*   Created: 2023/08/27 20:48:19 by bobydear          #+#    #+#             */
+/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	update_player_coordinates(t_game *game, int x, int y)
+void	update_player_coordinates(t_game *game, int x, int y) // done
 {
 	game->coor_x = x;
 	game->coor_y = y;
 }
 
-int	check_next_position(t_game *game, int x, int y)
+int	is_next_position_valid(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '0')
 		return (1);
@@ -34,7 +34,7 @@ int	check_next_position(t_game *game, int x, int y)
 	if (game->map[y][x] == 'E' && (game->collected == game->amount_c))
 	{
 		ft_printf("\033[0;32mYOU HELPED THOR TO SAVE THE WORLD FROM THANOS!\n");
-		exit_game(game);
+		handler_exit_game(game);
 	}
 	return (0);
 }
@@ -75,15 +75,15 @@ void	player_moves(char key, t_game *game)
 	x = game->coor_x;
 	y = game->coor_y;
 	if (key == 'W')
-		if (check_next_position(game, x, y - 1) == 1)
+		if (is_next_position_valid(game, x, y - 1) == 1)
 			move(game, 'W', x, y);
 	if (key == 'A')
-		if (check_next_position(game, x - 1, y) == 1)
+		if (is_next_position_valid(game, x - 1, y) == 1)
 			move(game, 'A', x, y);
 	if (key == 'S')
-		if (check_next_position(game, x, y + 1) == 1)
+		if (is_next_position_valid(game, x, y + 1) == 1)
 			move(game, 'S', x, y);
 	if (key == 'D')
-		if (check_next_position(game, x + 1, y) == 1)
+		if (is_next_position_valid(game, x + 1, y) == 1)
 			move(game, 'D', x, y);
 }

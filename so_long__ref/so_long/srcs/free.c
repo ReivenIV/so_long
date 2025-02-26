@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 17:35:29 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 16:28:39 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_map(char **map, t_game *game)
 	free(map);
 }
 
-int	exit_game(t_game *game)
+int	handler_exit_game(t_game *game)
 {
 	free_map(game->map, game);
 	free_map(game->temp_map, game);

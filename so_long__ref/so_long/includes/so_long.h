@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 17:42:25 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	init_images(t_game *game);
 
 /* free.c: */
 void	free_map(char **map, t_game *game);
-int		exit_game(t_game *game);
+int		handler_exit_game(t_game *game);
 
 /* draw.c: */
 ////void	draw_img(t_game *game, void *img, int x, int y);
@@ -115,7 +115,7 @@ void	player_position(t_game *game);
 int		flood_fill(t_game *game, char **map, int x, int y);
 
 /* player_moves.c: */
-int		check_next_position(t_game *game, int x, int y);
+int		is_next_position_valid(t_game *game, int x, int y);
 void	update_player_coordinates(t_game *game, int x, int y);
 void	move(t_game *game, char key, int x, int y);
 void	player_moves(char key, t_game *game);
