@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 15:18:06 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:28:33 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # define PLAYER_D "./assets/images/PD.xpm"
 # define IMG_EXIT "./assets/images/E.xpm"
 # define IMG_C "./assets/images/C.xpm"
-# define ING_WALL "./assets/images/1.xpm"
+# define IMG_WALL "./assets/images/1.xpm"
 # define IMG_BG "./assets/images/0.xpm"
 
 /* Define keys: */
@@ -91,7 +91,7 @@ int		are_map_rules_respected(t_game *game);
 void	init_struct(t_game *game);
 void	init_map(char *av, t_game *game);
 void	init_temp_map(char *av, t_game *game);
-void	init_imgs(t_game *game);
+void	init_images(t_game *game);
 
 /* free.c: */
 void	free_map(char **map, t_game *game);

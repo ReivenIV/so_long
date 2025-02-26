@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_and_events.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:33:32 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/22 16:14:27 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:53:43 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	start_game(t_game *game)
 	// // rows = game->amount_rows * SIZE;
 	// // cols = game->amount_cols * SIZE;
 	game->mlx = mlx_init();
-	init_imgs(game);
+	init_images(game);
 	game->win = mlx_new_window(game->mlx, game->amount_cols * SIZE, 
 		game->amount_rows * SIZE, "so long my dear");
 	draw_map(game);

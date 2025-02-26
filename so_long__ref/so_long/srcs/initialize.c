@@ -6,14 +6,14 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 15:18:06 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:28:33 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 
-void	init_imgs(t_game *game)
+void	init_images(t_game *game)
 {
 	int	w;
 	int	h;
@@ -28,7 +28,7 @@ void	init_imgs(t_game *game)
 	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
 	game->img_exit = mlx_xpm_file_to_image(game->mlx, IMG_EXIT, &w, &h);
 	game->img_collect = mlx_xpm_file_to_image(game->mlx, IMG_C, &w, &h);
-	game->img_wall = mlx_xpm_file_to_image(game->mlx, ING_WALL, &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, IMG_WALL, &w, &h);
 	game->img_bg = mlx_xpm_file_to_image(game->mlx, IMG_BG, &w, &h);
 }
 
