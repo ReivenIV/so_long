@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/25 18:30:13 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:18:06 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@
 # define PLAYER_S "./assets/images/PS.xpm"
 # define PLAYER_A "./assets/images/PA.xpm"
 # define PLAYER_D "./assets/images/PD.xpm"
-# define EXIT_IMG "./assets/images/E.xpm"
-# define COLLECT_IMG "./assets/images/C.xpm"
-# define WALL_IMG "./assets/images/1.xpm"
-# define BACKGROUND_IMG "./assets/images/0.xpm"
+# define IMG_EXIT "./assets/images/E.xpm"
+# define IMG_C "./assets/images/C.xpm"
+# define ING_WALL "./assets/images/1.xpm"
+# define IMG_BG "./assets/images/0.xpm"
 
 /* Define keys: */
 # define W 119

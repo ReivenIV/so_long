@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/25 18:28:39 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:18:06 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	init_imgs(t_game *game)
 	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, &w, &h);
 	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, &w, &h);
 	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
-	game->img_exit = mlx_xpm_file_to_image(game->mlx, EXIT_IMG, &w, &h);
-	game->img_collect = mlx_xpm_file_to_image(game->mlx, COLLECT_IMG, &w, &h);
-	game->img_wall = mlx_xpm_file_to_image(game->mlx, WALL_IMG, &w, &h);
-	game->img_bg = mlx_xpm_file_to_image(game->mlx, BACKGROUND_IMG, &w, &h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx, IMG_EXIT, &w, &h);
+	game->img_collect = mlx_xpm_file_to_image(game->mlx, IMG_C, &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, ING_WALL, &w, &h);
+	game->img_bg = mlx_xpm_file_to_image(game->mlx, IMG_BG, &w, &h);
 }
 
 // All created to NULL but only the image.
