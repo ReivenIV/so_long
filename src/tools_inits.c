@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   tools_inits.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/25 15:53:05 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 15:28:08 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	init_images(t_game *game)
+{
+	int	w;
+	int	h;
+
+	w = WIDTH;
+	h = HEIGHT;
+	game->img_player_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, &w, &h);
+	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, &w, &h);
+	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, &w, &h);
+	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx, IMG_EXIT, &w, &h);
+	game->img_collect = mlx_xpm_file_to_image(game->mlx, IMG_C, &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, IMG_WALL, &w, &h);
+	game->img_bg = mlx_xpm_file_to_image(game->mlx, IMG_BG, &w, &h);
+}
 
 void	init_struct_game(t_game *game)
 {
