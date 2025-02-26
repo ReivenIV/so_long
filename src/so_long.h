@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 14:41:32 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:10:51 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@
 # include <fcntl.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
+
+//	------------
+//	::  imgs  ::
+//	------------
+# define PLAYER_W "./images/PW.xpm"
+# define PLAYER_S "./images/PS.xpm"
+# define PLAYER_A "./images/PA.xpm"
+# define PLAYER_D "./images/PD.xpm"
+# define EXIT_IMG "./images/E.xpm"
+# define COLLECT_IMG "./images/C.xpm"
+# define WALL_IMG "./images/1.xpm"
+# define BACKGROUND_IMG "./images/0.xpm"
 
 //	------------------
 //	::  parameters  ::
@@ -63,9 +75,7 @@ typedef struct s_game
 }	t_game;
 
 
-//	--------------
-//	::  Assets  ::
-//	--------------
+
 
 //	------------
 //	::  keys  ::
