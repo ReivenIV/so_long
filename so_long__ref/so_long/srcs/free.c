@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 17:35:29 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 18:55:19 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	handler_exit_game(t_game *game)
 {
 	free_map(game->map, game);
 	free_map(game->temp_map, game);
-	mlx_destroy_image(game->mlx, game->img_player_w);
-	mlx_destroy_image(game->mlx, game->img_player_a);
-	mlx_destroy_image(game->mlx, game->img_player_s);
-	mlx_destroy_image(game->mlx, game->img_player_d);
+	mlx_destroy_image(game->mlx, game->img_p_w);
+	mlx_destroy_image(game->mlx, game->img_p_a);
+	mlx_destroy_image(game->mlx, game->img_p_s);
+	mlx_destroy_image(game->mlx, game->img_p_d);
 	mlx_destroy_image(game->mlx, game->img_exit);
 	mlx_destroy_image(game->mlx, game->img_collect);
 	mlx_destroy_image(game->mlx, game->img_bg);

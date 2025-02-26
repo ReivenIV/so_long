@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:47:54 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 15:28:33 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:54:27 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	init_images(t_game *game)
 	// // h = &game->img_height;
 	w = WIDTH;
 	h = HEIGHT;
-	game->img_player_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, &w, &h);
-	game->img_player_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, &w, &h);
-	game->img_player_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, &w, &h);
-	game->img_player_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
+	game->img_p_w = mlx_xpm_file_to_image(game->mlx, PLAYER_W, &w, &h);
+	game->img_p_a = mlx_xpm_file_to_image(game->mlx, PLAYER_A, &w, &h);
+	game->img_p_s = mlx_xpm_file_to_image(game->mlx, PLAYER_S, &w, &h);
+	game->img_p_d = mlx_xpm_file_to_image(game->mlx, PLAYER_D, &w, &h);
 	game->img_exit = mlx_xpm_file_to_image(game->mlx, IMG_EXIT, &w, &h);
 	game->img_collect = mlx_xpm_file_to_image(game->mlx, IMG_C, &w, &h);
 	game->img_wall = mlx_xpm_file_to_image(game->mlx, IMG_WALL, &w, &h);
@@ -37,10 +37,10 @@ void	init_struct(t_game *game)
 {
 	game->mlx = 0;
 	game->win = 0;
-	game->img_player_w = 0;
-	game->img_player_a = 0;
-	game->img_player_s = 0;
-	game->img_player_d = 0;
+	game->img_p_w = 0;
+	game->img_p_a = 0;
+	game->img_p_s = 0;
+	game->img_p_d = 0;
 	game->img_exit = 0;
 	game->img_collect = 0;
 	game->img_wall = 0;

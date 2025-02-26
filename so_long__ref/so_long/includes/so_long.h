@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 18:53:54 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;				// win = "window" needed to display the window with mlx
-	void	*img_player_w;
-	void	*img_player_a;
-	void	*img_player_s;
-	void	*img_player_d;
+	void	*img_p_w;
+	void	*img_p_a;
+	void	*img_p_s;
+	void	*img_p_d;
 	void	*img_exit;
 	void	*img_collect;
 	void	*img_wall;
