@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 16:30:36 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:42:25 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int		flood_fill(t_game *game, char **map, int x, int y);
 
 /* player_moves.c: */
 int		check_next_position(t_game *game, int x, int y);
-void	player_new_position(t_game *game, int x, int y);
+void	update_player_coordinates(t_game *game, int x, int y);
 void	move(t_game *game, char key, int x, int y);
 void	player_moves(char key, t_game *game);
 

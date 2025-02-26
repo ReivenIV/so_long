@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   player_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 20:48:19 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/21 17:22:30 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/26 17:42:25 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	player_new_position(t_game *game, int x, int y)
+void	update_player_coordinates(t_game *game, int x, int y)
 {
 	game->coor_x = x;
 	game->coor_y = y;
@@ -44,25 +44,25 @@ void	move(t_game *game, char key, int x, int y)
 	if (key == 'W')
 	{
 		player_move_w(game, x, (y - 1));
-		player_new_position(game, x, y - 1);
+		update_player_coordinates(game, x, y - 1);
 		game->map[y][x] = '0';
 	}
 	if (key == 'A')
 	{
 		player_move_a(game, (x - 1), y);
-		player_new_position(game, (x - 1), y);
+		update_player_coordinates(game, (x - 1), y);
 		game->map[y][x] = '0';
 	}
 	if (key == 'S')
 	{
 		player_move_s(game, x, (y + 1));
-		player_new_position(game, x, (y + 1));
+		update_player_coordinates(game, x, (y + 1));
 		game->map[y][x] = '0';
 	}
 	if (key == 'D')
 	{
 		player_move_d(game, (x + 1), y);
-		player_new_position(game, (x + 1), y);
+		update_player_coordinates(game, (x + 1), y);
 		game->map[y][x] = '0';
 	}
 }
