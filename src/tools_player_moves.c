@@ -6,13 +6,13 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 18:38:25 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 13:40:10 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:40:37 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	is_next_position_valid(t_game *game, int x, int y)
+int	is_next_pos_ok(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '0')
 		return (1);
@@ -24,14 +24,14 @@ int	is_next_position_valid(t_game *game, int x, int y)
 		return (0);
 	if (game->map[y][x] == 'E' && (game->collected == game->amount_c))
 	{
-		write(1, "Win my dear!!\n", 14);
+		write(1, "Win my dear win!!\n", 18);
 		handler_exit_game(game);
 	}
 	return (0);
 }
 
 // ny = new_y & nx = new_x 
-void	update_p_move_img(t_game *game, int nx, int ny, char key)
+static void	update_p_move_img(t_game *game, int nx, int ny, char key)
 {
 	int	x;
 	int	y;
@@ -42,13 +42,13 @@ void	update_p_move_img(t_game *game, int nx, int ny, char key)
 	nx = nx * SIZE;
 	ny = ny * SIZE;
 	mlx_put_image_to_window(game->mlx, game->win, game->img_bg, x, y);
-	if (key == 'w')
+	if (key == 'W')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_w, nx, ny);
-	if (key == 'a')
+	if (key == 'A')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_a, nx, ny);
-	if (key == 's')
+	if (key == 'S')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_s, nx, ny);	
-	if (key == 'd')
+	if (key == 'D')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_d, nx, ny);
 	game->moves++;
 	write(1, "Moves: ", 7);
@@ -56,7 +56,7 @@ void	update_p_move_img(t_game *game, int nx, int ny, char key)
 	write(1, "\n: ", 1);
 }
 
-void	move(t_game *game, char key, int x, int y)
+void	move_player(t_game *game, char key, int x, int y)
 {
 	if (key == 'W')
 	{
