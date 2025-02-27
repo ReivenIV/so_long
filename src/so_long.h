@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 16:02:12 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:39:42 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ typedef struct s_game
 	void	*img_bg;
 	char 	**map;
 	char	**temp_map;
-	// // int		img_width;
-	// // int		img_height;
 	int		amount_rows;
 	int		amount_cols;
 	int		player;
@@ -70,17 +68,7 @@ typedef struct s_game
 	int		collected;
 	int		moves;
 	int		exit;
-	// // int		wall;
-	// // int		background;
 }	t_game;
-
-//	------------
-//	::  keys  ::
-//	------------
-// // # define UP 65362
-// // # define LEFT 65361
-// // # define DOWN 65364
-// // # define RIGHT 65363
 
 //	----------------
 //	::  Handlers  ::
@@ -115,9 +103,9 @@ void	update_player_coordinates(t_game *game, int x, int y);
 
 // tools_player_moves
 // TODO need to be check maybe some of these function can become static.
-int		is_next_position_valid(t_game *game, int x, int y);
-void	update_p_move_img(t_game *game, int nx, int ny, char key);
-void	move(t_game *game, char key, int x, int y);
+int		is_next_pos_ok(t_game *game, int x, int y);
+// void	update_p_move_img(t_game *game, int nx, int ny, char key);
+void	move_player(t_game *game, char key, int x, int y);
 
 
 //	------------
