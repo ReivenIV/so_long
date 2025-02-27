@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:29:50 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 15:30:57 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:03:13 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int	handler_player_moves(int key, void *param)
 		move(game, 'S', x, y);
 	if (key == 'D' && is_next_position_valid(game, (x + 1), y) == 1)
 		move(game, 'D', x, y);
-	return ;
+	return (0);
 }
