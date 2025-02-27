@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/27 13:27:29 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:44:26 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@
 # define IMG_BG "./assets/images/0.xpm"
 
 /* Define keys: */
-# define W 119
-# define A 97
-# define S 115
-# define D 100
-# define UP 65362
-# define LEFT 65361
-# define DOWN 65364
-# define RIGHT 65363
+// // # define W 119
+// // # define A 97
+// // # define S 115
+// // # define D 100
+// // # define UP 65362
+// // # define LEFT 65361
+// // # define DOWN 65364
+// // # define RIGHT 65363
 
 /* Game structure: */
 typedef struct s_game
