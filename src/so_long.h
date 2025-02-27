@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 13:59:59 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:02:12 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ typedef struct s_game
 //	----------------
 void	handler_map_validator(char **av, t_game *game);
 void	handler_map_draw(t_game *game);
-void	handler_exit_game(t_game *game);
-void	handler_player_moves(char key, t_game *game);
+int		handler_player_moves(int key, void *param);			// Needs these format for the mlx
+int		handler_exit_game(t_game *game);
+void	handler_game(t_game *game);
 
 //	-------------
 //	::  Tools  ::
@@ -97,6 +98,7 @@ void	handler_player_moves(char key, t_game *game);
 // Tools_init
 void	init_struct_game(t_game *game);
 int		init_map(char *av, t_game *game, int amount_rows);
+void	init_images(t_game *game);
 
 // Tools_map
 int		count_lines(char *av);
