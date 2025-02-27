@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 11:48:42 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 14:00:12 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:55:12 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int ac, char **av)
 	validator_xs(ac, av);
 	init_struct_game(&game);
 	handler_map_validator(av, &game);			// Step: parser finit
-	free_map(game.map, &game);
+	handler_game(&game);
+	handler_exit_game(&game);
 	return (0);
 }
