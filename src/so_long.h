@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/27 13:52:53 by bobydear         ###   ########.fr       */
+/*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
+/*   Updated: 2025/02/27 13:59:59 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		init_map(char *av, t_game *game, int amount_rows);
 int		count_lines(char *av);
 void	count_pecs(t_game *game);
 
-// Tools_valid_map | validators | Parser
+// Tools_valid_map | validators | Parsers
 int		validator_xs(int ac, char **av);
 int		is_map_format_correct(t_game *game);
 int		are_map_paths_valid(char **av, t_game *game);
