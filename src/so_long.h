@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobytrap          #+#    #+#             */
-/*   Updated: 2025/02/26 18:53:01 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:52:53 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,13 @@ typedef struct s_game
 	// // int		background;
 }	t_game;
 
-
-
-
 //	------------
 //	::  keys  ::
 //	------------
-# define UP 65362
-# define LEFT 65361
-# define DOWN 65364
-# define RIGHT 65363
+// // # define UP 65362
+// // # define LEFT 65361
+// // # define DOWN 65364
+// // # define RIGHT 65363
 
 //	----------------
 //	::  Handlers  ::
@@ -91,7 +88,7 @@ typedef struct s_game
 void	handler_map_validator(char **av, t_game *game);
 void	handler_map_draw(t_game *game);
 void	handler_exit_game(t_game *game);
-
+void	handler_player_moves(char key, t_game *game);
 
 //	-------------
 //	::  Tools  ::
@@ -113,6 +110,13 @@ int		are_map_paths_valid(char **av, t_game *game);
 // Tools_player
 void	get_player_coordinates(t_game *game);
 void	update_player_coordinates(t_game *game, int x, int y);
+
+// tools_player_moves
+// TODO need to be check maybe some of these function can become static.
+int		is_next_position_valid(t_game *game, int x, int y);
+void	update_p_move_img(t_game *game, int nx, int ny, char key);
+void	move(t_game *game, char key, int x, int y);
+
 
 //	------------
 //	::  Free  ::
