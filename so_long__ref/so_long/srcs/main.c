@@ -6,7 +6,7 @@
 /*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 13:08:51 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 18:10:33 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/27 15:43:05 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ int	main(int ac, char **av)
 	verify(ac, av);									// First small check
 	init_struct(&game);								// Init game struct
 	full_map_checker(av[1], &game);					// full check, init map
-	start_game(&game);								// Handle init screen img handle events
+	handler_game(&game);								// Handle init screen img handle events
 	handler_exit_game(&game);							
 }

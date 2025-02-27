@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:00:04 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/26 18:54:55 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:43:58 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	draw_img(t_game *game, void *img, int x, int y)
 	mlx_put_image_to_window(game->mlx, game->win, img, x, y);
 }
 
-void	draw_map(t_game *game)
+void	handler_map_draw(t_game *game)
 {
 	int	x;
 	int	y;
@@ -48,7 +48,7 @@ void	draw_map(t_game *game)
 
 //* X*size and Y*size is to resize the image in case is bigger than 32. 
 // if the img is bigger than 32 then it will overlap with the others. 
-// // void	draw_map(t_game *game)
+// // void	handler_map_draw(t_game *game)
 // // {
 // // 	int	x;
 // // 	int	y;

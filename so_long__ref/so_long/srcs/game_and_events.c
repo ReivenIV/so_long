@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   game_and_events.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 19:33:32 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/27 15:27:23 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:43:58 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 
-void	start_game(t_game *game)
+void	handler_game(t_game *game)
 {
 	// // int	rows;
 	// // int	cols;
@@ -24,7 +24,7 @@ void	start_game(t_game *game)
 	init_images(game);
 	game->win = mlx_new_window(game->mlx, game->amount_cols * SIZE, 
 		game->amount_rows * SIZE, "so long my dear");
-	draw_map(game);
+	handler_map_draw(game);
 
 	mlx_hook(game->win, KeyPress, KeyPressMask, handler_player_moves, game);
 	mlx_hook(game->win, DestroyNotify, ButtonPressMask, &handler_exit_game, game);

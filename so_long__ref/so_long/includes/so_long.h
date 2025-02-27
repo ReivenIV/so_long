@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/27 15:20:42 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:43:58 by rita             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ int		handler_exit_game(t_game *game);
 
 /* draw.c: */
 ////void	draw_img(t_game *game, void *img, int x, int y);
-void	draw_map(t_game *game);
+void	handler_map_draw(t_game *game);
 
 /* game_and_events.c: */
 // // int		handle_exit(t_game *game);
 int		handle_keypress(int key, t_game *game);
 void	gameplay(t_game *game);
-void	start_game(t_game *game);
+void	handler_game(t_game *game);
 
 
 /* utils.c: */
