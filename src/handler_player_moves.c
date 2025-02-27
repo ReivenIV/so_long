@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:29:50 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 13:32:34 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:30:57 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ Will manage during the game :
 	- key events 
 	- IFs the player can or not move in a certain direction.  
 */
-void	handler_player_moves(char key, t_game *game)
+int	handler_player_moves(int key, void *param)
 {
 	int	x;
 	int	y;
-
+	t_game	*game;
+	
+	game = (t_game *)param;
 	x = game->coor_x;
 	y = game->coor_y;
 	if (key == 'W' && is_next_position_valid(game, x, (y - 1)) == 1)
