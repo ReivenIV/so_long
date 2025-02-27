@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rita <rita@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 12:58:08 by lbordona          #+#    #+#             */
-/*   Updated: 2025/02/27 14:04:26 by rita             ###   ########.fr       */
+/*   Updated: 2025/02/27 15:20:42 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int		flood_fill(t_game *game, char **map, int x, int y);
 // // int		is_next_position_valid(t_game *game, int x, int y);
 // // void	update_player_coordinates(t_game *game, int x, int y);
 // // void	move(t_game *game, char key, int x, int y);
-void	handler_player_moves(char key, t_game *game);
+int	handler_player_moves(int key, void *param);
 
 /*handler_player_moves_2.c: */
 // // void	player_move_w(t_game *game, int new_x, int new_y);

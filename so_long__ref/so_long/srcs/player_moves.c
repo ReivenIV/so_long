@@ -18,7 +18,7 @@ static void	update_player_coordinates(t_game *game, int x, int y) // DONE : "too
 	game->coor_y = y;
 }
 
-static int	is_next_position_valid(t_game *game, int x, int y)
+static int	is_next_pos_ok(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '0')
 		return (1);
@@ -94,21 +94,44 @@ static void	move(t_game *game, char key, int x, int y)
 	game->map[y][x] = '0';
 }
 
-//!  testing mode : 
-void	handler_player_moves(char key, t_game *game)	// DONE 
+// void	handler_player_moves(char key, t_game *game)
+// {
+// 	int	x;
+// 	int	y;
+
+// 	x = game->coor_x;
+// 	y = game->coor_y;
+// 	if (key == 'W'  && is_next_pos_ok(game, x, (y - 1)) == 1)
+// 		move(game, 'W', x, y);
+// 	if (key == 'A' && is_next_pos_ok(game, (x - 1), y) == 1)
+// 		move(game, 'A', x, y);
+// 	if (key == 'S' && is_next_pos_ok(game, x, (y + 1)) == 1)
+// 		move(game, 'S', x, y);
+// 	if (key == 'D' && is_next_pos_ok(game, (x + 1), y) == 1)
+// 		move(game, 'D', x, y);
+// 	return ;
+// }
+
+//!  ..:: testing mode ::.. 
+
+int	handler_player_moves(int key, void *param)
 {
 	int	x;
 	int	y;
+	t_game	*game;
 
+	game = (t_game *)param;
 	x = game->coor_x;
 	y = game->coor_y;
-	if (key == 'W'  && is_next_position_valid(game, x, (y - 1)) == 1)
+	if (key == XK_Escape)
+		handler_exit_game(game);
+	else if ((key == XK_w || key == XK_Up) && is_next_pos_ok(game, x, (y - 1)) == 1)
 		move(game, 'W', x, y);
-	if (key == 'A' && is_next_position_valid(game, (x - 1), y) == 1)
+	else if ((key == XK_a || key == XK_Left) && is_next_pos_ok(game, (x - 1), y) == 1)
 		move(game, 'A', x, y);
-	if (key == 'S' && is_next_position_valid(game, x, (y + 1)) == 1)
+	else if ((key == XK_s || key == XK_Down) && is_next_pos_ok(game, x, (y + 1)) == 1)
 		move(game, 'S', x, y);
-	if (key == 'D' && is_next_position_valid(game, (x + 1), y) == 1)
+	else if ((key == XK_d || key == XK_Right) && is_next_pos_ok(game, (x + 1), y) == 1)
 		move(game, 'D', x, y);
-	return ;
+	return (0);
 }
