@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_moves.c                                     :+:      :+:    :+:   */
+/*   handler_player_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -95,7 +95,7 @@ static void	move(t_game *game, char key, int x, int y)
 }
 
 //!  testing mode : 
-void	player_moves(char key, t_game *game)	// DONE 
+void	handler_player_moves(char key, t_game *game)	// DONE 
 {
 	int	x;
 	int	y;
