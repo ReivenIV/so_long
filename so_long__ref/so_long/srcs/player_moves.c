@@ -6,19 +6,19 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 20:48:19 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 12:40:20 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:27:58 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	update_player_coordinates(t_game *game, int x, int y) // DONE : "tools_player".c
+static void	update_player_coordinates(t_game *game, int x, int y) // DONE : "tools_player".c
 {
 	game->coor_x = x;
 	game->coor_y = y;
 }
 
-int	is_next_position_valid(t_game *game, int x, int y)
+static int	is_next_position_valid(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '0')
 		return (1);
@@ -40,7 +40,7 @@ int	is_next_position_valid(t_game *game, int x, int y)
 }
 //! ..:: Testing mode ::..
 // Will need to be moved away 
-void	update_p_move_img(t_game *game, int nx, int ny, char key) // DONE : "tools_player_moves"
+static void	update_p_move_img(t_game *game, int nx, int ny, char key) // DONE : "tools_player_moves"
 {
 	int	x;
 	int	y;
@@ -65,7 +65,7 @@ void	update_p_move_img(t_game *game, int nx, int ny, char key) // DONE : "tools_
 	write(1, "\n: ", 1);
 }
 
-void	move(t_game *game, char key, int x, int y)
+static void	move(t_game *game, char key, int x, int y)
 {
     if (key == 'W')
     {
@@ -94,23 +94,21 @@ void	move(t_game *game, char key, int x, int y)
 	game->map[y][x] = '0';
 }
 
-void	player_moves(char key, t_game *game)
+//!  testing mode : 
+void	player_moves(char key, t_game *game)	// DONE 
 {
 	int	x;
 	int	y;
 
 	x = game->coor_x;
 	y = game->coor_y;
-	if (key == 'W')
-		if (is_next_position_valid(game, x, y - 1) == 1)
-			move(game, 'W', x, y);
-	if (key == 'A')
-		if (is_next_position_valid(game, x - 1, y) == 1)
-			move(game, 'A', x, y);
-	if (key == 'S')
-		if (is_next_position_valid(game, x, y + 1) == 1)
-			move(game, 'S', x, y);
-	if (key == 'D')
-		if (is_next_position_valid(game, x + 1, y) == 1)
-			move(game, 'D', x, y);
+	if (key == 'W'  && is_next_position_valid(game, x, (y - 1)) == 1)
+		move(game, 'W', x, y);
+	if (key == 'A' && is_next_position_valid(game, (x - 1), y) == 1)
+		move(game, 'A', x, y);
+	if (key == 'S' && is_next_position_valid(game, x, (y + 1)) == 1)
+		move(game, 'S', x, y);
+	if (key == 'D' && is_next_position_valid(game, (x + 1), y) == 1)
+		move(game, 'D', x, y);
+	return ;
 }
