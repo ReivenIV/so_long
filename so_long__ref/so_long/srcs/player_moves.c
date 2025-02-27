@@ -6,13 +6,13 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 20:48:19 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/26 19:20:10 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:40:20 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	update_player_coordinates(t_game *game, int x, int y) // done
+void	update_player_coordinates(t_game *game, int x, int y) // DONE : "tools_player".c
 {
 	game->coor_x = x;
 	game->coor_y = y;
@@ -39,8 +39,8 @@ int	is_next_position_valid(t_game *game, int x, int y)
 	return (0);
 }
 //! ..:: Testing mode ::..
-// Will need to be moved away
-void	next_player_move(t_game *game, int nx, int ny, char key)
+// Will need to be moved away 
+void	update_p_move_img(t_game *game, int nx, int ny, char key) // DONE : "tools_player_moves"
 {
 	int	x;
 	int	y;
@@ -51,45 +51,47 @@ void	next_player_move(t_game *game, int nx, int ny, char key)
 	nx = nx * SIZE;
 	ny = ny * SIZE;
 	mlx_put_image_to_window(game->mlx, game->win, game->img_bg, x, y);
-	// W A S D
-	if (key == 'w')
+	if (key == 'W')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_w, nx, ny);
-	if (key == 'a')
+	if (key == 'A')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_a, nx, ny);
-	if (key == 's')
+	if (key == 'S')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_s, nx, ny);	
-	if (key == 'd')
+	if (key == 'D')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_d, nx, ny);
 	game->moves++;
-	ft_printf("%s%d\n", "Moves: ", game->moves);
+	write(1, "Moves: ", 7);
+	ft_putnbr_fd(game->moves, 1);
+	write(1, "\n: ", 1);
 }
 
 void	move(t_game *game, char key, int x, int y)
 {
     if (key == 'W')
     {
-        next_player_move(game, x, (y - 1), 'w');
-        update_player_coordinates(game, x, y - 1);
-        game->map[y][x] = '0';
+        update_p_move_img(game, x, (y - 1), 'W');
+        update_player_coordinates(game, x, (y - 1));
+        ////game->map[y][x] = '0';
     }
     else if (key == 'A')
     {
-        next_player_move(game, (x - 1), y, 'a');
+        update_p_move_img(game, (x - 1), y, 'A');
         update_player_coordinates(game, (x - 1), y);
-        game->map[y][x] = '0';
+        ////game->map[y][x] = '0';
     }
     else if (key == 'S')
     {
-        next_player_move(game, x, (y + 1), 's');
+        update_p_move_img(game, x, (y + 1), 'S');
         update_player_coordinates(game, x, (y + 1));
-        game->map[y][x] = '0';
+        ////game->map[y][x] = '0';
     }
     else if (key == 'D')
     {
-        next_player_move(game, (x + 1), y, 'd');
+        update_p_move_img(game, (x + 1), y, 'D');
         update_player_coordinates(game, (x + 1), y);
-        game->map[y][x] = '0';
+        ////game->map[y][x] = '0';
     }
+	game->map[y][x] = '0';
 }
 
 void	player_moves(char key, t_game *game)
