@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 18:38:25 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 16:40:37 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:51:00 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int	is_next_pos_ok(t_game *game, int x, int y)
 	return (0);
 }
 
-// ny = new_y & nx = new_x 
+/*
+In every movement of the player we will will update the images concerned.
+and we will count and print every movement into the terminal. 
+*/
 static void	update_p_move_img(t_game *game, int nx, int ny, char key)
 {
 	int	x;
@@ -56,6 +59,9 @@ static void	update_p_move_img(t_game *game, int nx, int ny, char key)
 	write(1, "\n: ", 1);
 }
 
+/*
+Will update the coords in the struct plus in the map + the images
+*/
 void	move_player(t_game *game, char key, int x, int y)
 {
 	if (key == 'W')

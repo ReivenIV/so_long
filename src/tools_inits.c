@@ -6,12 +6,13 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 14:00:12 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:05:17 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+// Will "mount" the images to the struct
 void	init_images(t_game *game)
 {
 	int	w;
@@ -28,7 +29,7 @@ void	init_images(t_game *game)
 	game->img_wall = mlx_xpm_file_to_image(game->mlx, IMG_WALL, &w, &h);
 	game->img_bg = mlx_xpm_file_to_image(game->mlx, IMG_BG, &w, &h);
 }
-
+// Will init the struct, everything 0
 void	init_struct_game(t_game *game)
 {
 	game->mlx = 0;
@@ -43,8 +44,6 @@ void	init_struct_game(t_game *game)
 	game->img_bg = 0;
 	game->map = 0;
 	game->temp_map = 0;
-	// // game->img_width = 32;
-	// // game->img_height = 32;
 	game->amount_rows = 0;
 	game->amount_cols = 0;
 	game->player = 0;
@@ -55,7 +54,7 @@ void	init_struct_game(t_game *game)
 	game->moves = 0;
 	game->exit = 0;
 }
-
+// Will "mount" the map from the file.ber to the struct **map
 int	init_map(char *av, t_game *game, int amount_rows)
 {
 	char	*line;

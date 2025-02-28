@@ -6,15 +6,13 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:00:32 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 16:01:45 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:13:37 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 // At the end of the game or ESC we will free everything and end the proces.
-
-// int	handler_exit_game(t_game *game)
 int	handler_exit_game(t_game *game)
 {
 	free_map(game->map, game);

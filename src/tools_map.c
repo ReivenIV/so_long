@@ -6,12 +6,13 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:08:43 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 14:00:12 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:52:12 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+// Will open the map file + count every line in it.
 int	count_lines(char *av)
 {
 	char	*line;								// Pointer to hold each line read from the file
@@ -39,7 +40,7 @@ int	count_lines(char *av)
 // // 	return (0);
 // // }
 
-// TODO will count Players, Exits, 
+// Will count pecs in the map and update struct
 void	count_pecs(t_game *game)
 {
 	int	i;
