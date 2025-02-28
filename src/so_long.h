@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 17:42:49 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 13:59:06 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 //	------------
 //	::  imgs  ::
 //	------------
-# define PLAYER_W "./images_2/PW.xpm"
-# define PLAYER_S "./images_2/PS.xpm"
-# define PLAYER_A "./images_2/PA.xpm"
-# define PLAYER_D "./images_2/PD.xpm"
+# define PLAYER_W "./images/PW.xpm"
+# define PLAYER_S "./images/PS.xpm"
+# define PLAYER_A "./images/PA.xpm"
+# define PLAYER_D "./images/PD.xpm"
 # define IMG_EXIT "./images/E.xpm"
 # define IMG_C "./images/C.xpm"
 # define IMG_WALL "./images/1.xpm"
