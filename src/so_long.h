@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 14:02:20 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:04:09 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>								// Mallocs
 # include <string.h>
 # include <fcntl.h>
-//// # include <X11/X.h>
+# include <X11/X.h>
 # include <X11/keysym.h>							// Keys events
 
 //	------------
