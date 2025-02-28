@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+         #
+#    By: 88888888 <88888888@contact.me>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 11:49:14 by bobydear          #+#    #+#              #
-#    Updated: 2025/02/28 17:44:03 by bobydear         ###   ########.fr        #
+#    Updated: 2025/02/28 18:28:52 by 88888888         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,21 +18,21 @@ EXTRA = -lXext -lX11
 RM = rm -rf
 LIBFT = ./libft/libft.a
 MINILIBX = ./minilibx-linux/libmlx.a
-SRCS = src/main.c \
-		src/handler_exit_game.c \
-		src/tools_player.c \
-		src/tools_valid_map.c \
-		src/handler_game.c \
-		src/tools_player_moves.c \
-		src/tools_valid_xs.c \
-		src/handler_map_draw.c \
-		src/tools_free.c \
-		src/tools_print.c \
-		src/handler_map_validator.c \
-		src/tools_inits.c \
-		src/handler_player_moves.c \
-		src/tools_map.c \
-		src/tools_valid_map_2.c \
+SRCS = src_clean/main.c \
+		src_clean/handler_exit_game.c \
+		src_clean/tools_player.c \
+		src_clean/tools_valid_map.c \
+		src_clean/handler_game.c \
+		src_clean/tools_player_moves.c \
+		src_clean/tools_valid_xs.c \
+		src_clean/handler_map_draw.c \
+		src_clean/tools_free.c \
+		src_clean/tools_print.c \
+		src_clean/handler_map_validator.c \
+		src_clean/tools_inits.c \
+		src_clean/handler_player_moves.c \
+		src_clean/tools_map.c \
+		src_clean/tools_valid_map_2.c \
 
 OBJS = $(SRCS:.c=.o)
 
