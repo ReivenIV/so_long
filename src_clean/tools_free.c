@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:51:14 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 18:05:34 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:57:07 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Will free the map (Very usefull)
 void	free_map(char **map, t_game *game)
 {
-	int i;
+	int	i;
 
 	if (!map)
 	{

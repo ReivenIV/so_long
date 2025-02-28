@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handler_map_draw.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:34:14 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/27 13:34:29 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:02:54 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	handler_map_draw(t_game *game)
 		x = 0;
 		while (x < game->amount_cols)
 		{
-
 			if (game->map[y][x] == 'P')
 				draw_img(game, game->img_p_d, x, y);
 			else if (game->map[y][x] == 'E')

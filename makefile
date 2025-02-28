@@ -6,7 +6,7 @@
 #    By: 88888888 <88888888@contact.me>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 11:49:14 by bobydear          #+#    #+#              #
-#    Updated: 2025/02/28 18:28:52 by 88888888         ###   ########.fr        #
+#    Updated: 2025/02/28 18:42:42 by 88888888         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ SRCS = src_clean/main.c \
 		src_clean/tools_valid_xs.c \
 		src_clean/handler_map_draw.c \
 		src_clean/tools_free.c \
-		src_clean/tools_print.c \
 		src_clean/handler_map_validator.c \
 		src_clean/tools_inits.c \
 		src_clean/handler_player_moves.c \

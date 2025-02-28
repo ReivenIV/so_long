@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_player.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:17:09 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 17:47:34 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:43:49 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	get_player_coordinates(t_game *game)
 		y++;
 	}
 }
+
 // With a given x:y we update the game->cordinates of the player position.
 void	update_player_coordinates(t_game *game, int x, int y)
 {

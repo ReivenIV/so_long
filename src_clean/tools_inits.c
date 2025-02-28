@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_inits.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:01 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 18:05:17 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:55:49 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	init_images(t_game *game)
 	game->img_wall = mlx_xpm_file_to_image(game->mlx, IMG_WALL, &w, &h);
 	game->img_bg = mlx_xpm_file_to_image(game->mlx, IMG_BG, &w, &h);
 }
+
 // Will init the struct, everything 0
 void	init_struct_game(t_game *game)
 {
@@ -54,6 +55,7 @@ void	init_struct_game(t_game *game)
 	game->moves = 0;
 	game->exit = 0;
 }
+
 // Will "mount" the map from the file.ber to the struct **map
 int	init_map(char *av, t_game *game, int amount_rows)
 {
@@ -67,35 +69,19 @@ int	init_map(char *av, t_game *game, int amount_rows)
 	if (!game->map)
 		return (write(2, "Error: malloc failed\n", 21), 0);
 	fd = open(av, O_RDONLY);
-	if (fd == -1)
-		return (free(game->map), 0);
-	while ((line = get_next_line(fd)) != NULL)
+	while (1)
 	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
 		game->map[i] = ft_strtrim(line, "\n");
 		free(line);
 		if (!game->map[i])
-				return (write(2, "Error: malloc failed in ft_strtrim\n", 35), free_map(game->map, game), close(fd), 0);
+			return (write(2, "Error: malloc failed in ft_strtrim\n", 35),
+				free_map(game->map, game), close(fd), 0);
 		i++;
 	}
 	game->map[i] = NULL;
 	close(fd);
 	return (1);
 }
-
-// Test init_map
-// // int main(int ac, char **av)
-// // {
-// // 	(void)ac;
-// //     t_game game;
-// //     init_struct_game(&game);
-// //     game.amount_rows = count_lines(av[1]);
-// //     if (game.amount_rows == -1)
-// //     {
-// //         perror("Error counting lines in file");
-// //         return 1;
-// //     }
-// //     init_map(av[1], &game);
-// // 	print_map(game.map, game.amount_rows);
-// //     free_map(game.map, &game);
-// //     return (0);
-// // }

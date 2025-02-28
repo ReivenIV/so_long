@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools_player_moves.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 18:38:25 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 17:51:00 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:44:14 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static void	update_p_move_img(t_game *game, int nx, int ny, char key)
 
 	x = game->coor_x * SIZE;
 	y = game->coor_y * SIZE;
-	
 	nx = nx * SIZE;
 	ny = ny * SIZE;
 	mlx_put_image_to_window(game->mlx, game->win, game->img_bg, x, y);
@@ -50,7 +49,7 @@ static void	update_p_move_img(t_game *game, int nx, int ny, char key)
 	if (key == 'A')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_a, nx, ny);
 	if (key == 'S')
-		mlx_put_image_to_window(game->mlx, game->win, game->img_p_s, nx, ny);	
+		mlx_put_image_to_window(game->mlx, game->win, game->img_p_s, nx, ny);
 	if (key == 'D')
 		mlx_put_image_to_window(game->mlx, game->win, game->img_p_d, nx, ny);
 	game->moves++;

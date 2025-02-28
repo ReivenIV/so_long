@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handler_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
+/*   By: 88888888 <88888888@contact.me>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 15:38:40 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 18:14:03 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:05:03 by 88888888         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void	handler_game(t_game *game)
 {
 	game->mlx = mlx_init();
 	init_images(game);
-	game->win = mlx_new_window(game->mlx, game->amount_cols * SIZE, game->amount_rows * SIZE, "So long Baby !");
+	game->win = mlx_new_window(game->mlx, game->amount_cols * SIZE,
+			game->amount_rows * SIZE, "So long Baby !");
 	handler_map_draw(game);
 	mlx_hook(game->win, KeyPress, KeyPressMask, handler_player_moves, game);
-	mlx_hook(game->win, DestroyNotify, ButtonPressMask, &handler_exit_game, game);
+	mlx_hook(game->win, DestroyNotify, ButtonPressMask,
+		&handler_exit_game, game);
 	mlx_loop(game->mlx);
 }
