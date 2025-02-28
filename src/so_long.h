@@ -6,7 +6,7 @@
 /*   By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:00:10 by bobydear          #+#    #+#             */
-/*   Updated: 2025/02/28 13:59:06 by bobydear         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:02:20 by bobydear         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
-# include <stdio.h>									//! printf just for testing 
+# include <stdio.h>	
 # include <unistd.h>								// Write
 # include <stdlib.h>								// Mallocs
 # include <string.h>
 # include <fcntl.h>
-# include <X11/X.h>
-# include <X11/keysym.h>
+//// # include <X11/X.h>
+# include <X11/keysym.h>							// Keys events
 
 //	------------
 //	::  imgs  ::
@@ -49,10 +49,10 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;					// win = window
-	void	*img_p_w;			// front
-	void	*img_p_a;			// right
-	void	*img_p_s;			// left
-	void	*img_p_d;			// back
+	void	*img_p_w;				// front
+	void	*img_p_a;				// right
+	void	*img_p_s;				// left
+	void	*img_p_d;				// back
 	void	*img_exit;
 	void	*img_collect;
 	void	*img_wall;
