@@ -6,7 +6,7 @@
 #    By: bobydear <bobydear@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/20 11:49:14 by bobydear          #+#    #+#              #
-#    Updated: 2025/02/27 15:58:57 by bobydear         ###   ########.fr        #
+#    Updated: 2025/02/28 17:44:03 by bobydear         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS = src/main.c \
 		src/tools_print.c \
 		src/handler_map_validator.c \
 		src/tools_inits.c \
-		src/tools_str.c \
 		src/handler_player_moves.c \
 		src/tools_map.c \
 		src/tools_valid_map_2.c \
