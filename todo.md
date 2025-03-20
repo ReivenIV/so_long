@@ -1,25 +1,23 @@
 # TODO
 
-
-
-## Main structure:
+## Main structure: ✅
 	- [x]	validator_xs
 	- [x]	init_struct	(will create a struct with almost everything empty atributs)
 	- [x]	handler_map_validator
-	- [ ]	handler_show_in_screen 
-		- [ ] show screen
-		- [ ] show assets complet
-	- [ ]	start_game (handle events)
-	- [ ]	close_game	(f)
-		- [ ] free the game (map + imgs)
-		- [ ] end process
+	- [x]	handler_show_in_screen 
+		- [x] show screen
+		- [x] show assets complet
+	- [x]	start_game (handle events)
+	- [x]	close_game	(f)
+		- [x] free the game (map + imgs)
+		- [x] end process
 
-## Inits 
+## Inits ✅
 	- [x] init_struct
 	- [x] init_map
-	- [ ] (done) init_map_temp
+	- [x] init_map_temp
 		- reminder : I found a way to not do it without using an extra atribut in the struct
-	- [ ] init_images (will need mlx)
+	- [x] init_images (will need mlx)
 
 
 ## GNL & LIBFT (done) ✅
@@ -36,7 +34,7 @@
 		- will need to bring:
 		- [x] GNL 
 		- [x] LIBFT 
-		- [ ] PRINTF ?
+		- [x] PRINTF ?
 			- will try to avoid using printf i prefer write
 
 ##  handler_map_validator (done) ✅
@@ -72,5 +70,3 @@
 						- 1 exit
 						- 1 player
 						- sourounding is all 1 (walls)
-
-
