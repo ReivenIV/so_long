@@ -1,4 +1,4 @@
-# So Long 42
+# So Long my dear !!
 
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/ReivenIV/so_long?color=lightblue" />
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ReivenIV/so_long?color=green" />
