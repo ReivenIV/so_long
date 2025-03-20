@@ -36,7 +36,6 @@ SRCS = src_clean/main.c \
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-	$(MAKE) clean
 
 $(LIBFT):
 	@$(MAKE) -C ./libft
@@ -61,4 +60,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-	$(MAKE) clean
